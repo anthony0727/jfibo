@@ -55,30 +55,35 @@ illustrative.
 | `S100VYN4` | ITOCHU Corporation (伊藤忠商事) | FY2024 | materialized |
 | `S100W4FB` | Mitsubishi UFJ Financial Group | FY2024 | materialized |
 | `S100W4HN` | SoftBank Group Corp. | FY2024 | materialized |
-| Honda Motor Co., Ltd. (E02165) | — | FY2024 | **not yet materialized** — outside the current 400-day scan window; v0.5 dropped this silently. v1.0 surfaces the miss via `scripts/find_target_filings.py --strict`. See `tests/test_strict_targets.py`. |
+| `S100VYOD` | Honda Motor Co., Ltd. (本田技研工業) | FY2024 (年度末 2025-03-31) | materialized (v1.1.1; v0.5 had wrong EDINET code E02165, correct is E02166) |
 
 ### Claim families instantiated from those 4 filings
 
 | Claim family | Count |
 |---:|:---|
-| `PolicyShareholding` | 176 |
-| `MajorShareholderClaim` | 40 |
+| `PolicyShareholding` | 223 |
+| `MajorShareholderClaim` | 50 |
 | `BorrowingsClaim` | 5 |
 | `CommercialPaperClaim` | 1 |
 | `CrossShareholdingClaim` | 1 (Toyota Motor ↔ MUFG, triangulated) |
-| `MainBankCandidate` | 0 (see Open work) |
-| **Total** | **223** |
+| `MainBankCandidate` | 1 (Mizuho Bank → ITOCHU, v1.1 materializer) |
+| **Total** | **281** |
 
 ## Known gaps and open work
 
-1. **Honda Motor (E02165) FY2024 securities report** is not yet in the corpus.
-   Root cause: the 400-day scan window starting at the v0.5 build time
-   excluded Honda's submission date. v1.0 fixes the silent-drop behavior;
-   re-running with a wider window will pick Honda up.
-2. **`MainBankCandidate` has zero instances.** The concept is defined and
-   shape-validated, but the materializer does not yet emit candidate edges
-   from the borrowings schedule. This is the most visible Japan-specific
-   gap and is the headline target for v1.1.
+1. ~~Honda Motor (E02165) FY2024 securities report not yet in the corpus.~~
+   **Fixed in v1.1.1.** Root cause was a wrong EDINET code (E02165 vs the
+   correct E02166 for 本田技研工業株式会社), not a window-width issue. Honda's
+   FY2024 securities report (`S100VYOD`, filed 2025-06-18) is now in the
+   corpus with 47 PolicyShareholding + 10 MajorShareholderClaim instances.
+   Regression test: `tests/test_honda_corpus.py`.
+2. ~~`MainBankCandidate` has zero instances.~~ **Fixed in v1.1.** The
+   materializer (`scripts/materialize_main_bank_candidates.py`) now emits
+   candidacy edges when a commercial bank or bank holding company appears
+   as a direct RegisteredHolder of an issuer. One claim in the current
+   corpus: Mizuho Bank → ITOCHU (rank 6, 2.2%, FY2024). Honda has no
+   bank-as-RegisteredHolder in its top 10 (consistent with Honda
+   historically not being tied to a traditional keiretsu main bank).
 3. **No EDINET alignment for `LargeShareholdingReport` body elements.** Only
    the document-type concept itself is modeled. v1.1 should align the
    element-level fields once a filing of this type is in the corpus.
