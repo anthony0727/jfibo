@@ -15,55 +15,55 @@
 #     session (id from contributors.yaml).  This drives PROV emission and the
 #     building-trajectory diagram.
 
-base_iri:    https://w3id.org/jfibo/ontology/JP/
-version:     0.2.0
-prefix:      jfibo
-prefix_iri:  https://w3id.org/jfibo/ontology/JP/core/
+base_iri: https://w3id.org/jfibo/ontology/JP/
+version: 0.2.0
+prefix: jfibo
+prefix_iri: https://w3id.org/jfibo/ontology/JP/core/
 
 modules:
   core:
     path: ontology/jfibo-core.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/core/
+    iri: https://w3id.org/jfibo/ontology/JP/core/
     label_en: J-FIBO Core
     label_ja: 金融意味基盤・日本版 コア
   information-status:
     path: ontology/jfibo-information-status.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/information-status/
+    iri: https://w3id.org/jfibo/ontology/JP/information-status/
     label_en: J-FIBO Information Status
     label_ja: 金融意味基盤・日本版 情報状態
   normative-status:
     path: ontology/jfibo-normative-status.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/normative-status/
+    iri: https://w3id.org/jfibo/ontology/JP/normative-status/
     label_en: J-FIBO Normative Status
     label_ja: 金融意味基盤・日本版 規範ステータス
   reporting-regime:
     path: ontology/jfibo-reporting-regime.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/reporting-regime/
+    iri: https://w3id.org/jfibo/ontology/JP/reporting-regime/
     label_en: J-FIBO Reporting Regime
     label_ja: 金融意味基盤・日本版 報告規制
   document-type:
     path: ontology/jfibo-document-type.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/document-type/
+    iri: https://w3id.org/jfibo/ontology/JP/document-type/
     label_en: J-FIBO Document Type
     label_ja: 金融意味基盤・日本版 開示書類種別
   holder-role:
     path: ontology/jfibo-holder-role.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/holder-role/
+    iri: https://w3id.org/jfibo/ontology/JP/holder-role/
     label_en: J-FIBO Holder Role
     label_ja: 金融意味基盤・日本版 保有者役割
   disclosure-claim:
     path: ontology/jfibo-disclosure-claim.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/disclosure-claim/
+    iri: https://w3id.org/jfibo/ontology/JP/disclosure-claim/
     label_en: J-FIBO Disclosure Claim
     label_ja: 金融意味基盤・日本版 開示主張
   institutional-context:
     path: ontology/jfibo-institutional-context.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/institutional-context/
+    iri: https://w3id.org/jfibo/ontology/JP/institutional-context/
     label_en: J-FIBO Institutional Context
     label_ja: 金融意味基盤・日本版 制度的文脈
   edinet-alignment:
     path: ontology/jfibo-edinet-alignment.ttl
-    iri:  https://w3id.org/jfibo/ontology/JP/edinet-alignment/
+    iri: https://w3id.org/jfibo/ontology/JP/edinet-alignment/
     label_en: J-FIBO EDINET Alignment
     label_ja: 金融意味基盤・日本版 EDINET整合
 
@@ -83,6 +83,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "会社法上の株式会社。株式を発行する社員（株主）により構成される営利法人として、J-FIBOでは正式組織としてモデル化される。"
   - id: GodoKaisha
     module: core
     kind: class
@@ -95,6 +96,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "会社法上の合同会社。社員の出資により構成される持分会社の一形態として、J-FIBOでは正式組織としてモデル化される。"
   - id: SougouShousha
     module: core
     kind: class
@@ -108,6 +110,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "総合商社。多種の商品・サービスの貿易・投資・事業開発を行う総合的な商社をJ-FIBO上の組織サブクラスとして表現したもの。"
   - id: JapaneseListedShare
     module: core
     kind: class
@@ -120,6 +123,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "日本の金融商品取引所に上場している株式を表すJ-FIBOクラス。FIBOのListedShareをJP市場文脈で特化したもの。"
   - id: EDINETDisclosureDocument
     module: core
     kind: class
@@ -133,6 +137,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "EDINETを通じて提出された開示書類で、J-FIBOの開示主張のエビデンスとして使用される。"
+    scope_note_ja: "文書をエビデンスオブジェクトとして表現する。書類種別・提出者・タクソノミ要素ファクトは別途モデル化すること。"
   - id: EDINETTaxonomyElement
     module: edinet-alignment
     kind: class
@@ -149,6 +155,8 @@ terms:
   # =========================================================================
   # Information boundary / status (closed vocabulary)
   # =========================================================================
+    definition_ja: "EDINET XBRLタクソノミの要素（element）をJ-FIBO側で参照可能とするためのアライメント概念。"
+    scope_note_ja: "アライメントハンドルであり、正本はFSA公表のEDINET XBRLタクソノミに帰属する。"
   - id: InformationSet
     module: information-status
     kind: class
@@ -162,6 +170,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "ある説明が時点において利用可能とする、レコード・観測・開示・派生事実の有界な集合。"
+    scope_note_ja: "監査可能なエビデンスと、利用できない潜在変数・反実仮想・予測を区別するために使用する。"
   - id: InformationBoundary
     module: information-status
     kind: class
@@ -188,6 +198,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "ある主張が観測済・開示済・推論済・仮説・反実仮想・予測・情報境界外のいずれであるかを表す閉じた語彙。"
   - id: Observed
     module: information-status
     kind: individual
@@ -201,6 +212,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "機械可読データまたは整備されたエビデンスにおいて直接観測された事実。"
+    scope_note_ja: "ファクトが構造化データとして直接利用可能な場合、Disclosedより強い。"
   - id: Disclosed
     module: information-status
     kind: individual
@@ -214,6 +227,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "公式の開示書類またはその他の引用可能な公開ソースに記載された事実。"
+    scope_note_ja: "それ自体は、ファクトが経済的に因果的または予測的であることを主張しない。"
   - id: EvidenceBackedInferred
     module: information-status
     kind: individual
@@ -227,6 +242,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "引用されたエビデンスから明示的な規則またはパターンに基づいて推論された主張。"
+    scope_note_ja: "規則またはエビデンスパターンを引用し、開示済事実と同一視してはならない。"
   - id: Hypothesized
     module: information-status
     kind: individual
@@ -240,6 +257,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "もっともらしいが、エビデンスとしては不十分な主張。"
+    scope_note_ja: "SHACLのエビデンス閾値が満たされる前のメインバンク候補等、探索的な制度的パターンに使用する。"
   - id: Counterfactual
     module: information-status
     kind: individual
@@ -296,6 +315,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "主張が依拠する規範的根拠の閉じた語彙——法的義務・会計開示・ガバナンス開示・制度的期待・推論仮説。"
+    scope_note_ja: "informationStatusと直交する。同一の主張がDisclosed（情報）かつAccountingDisclosure（規範根拠）となり得る。"
   - id: LegalObligation
     module: normative-status
     kind: individual
@@ -309,6 +330,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "法令により課された義務に関する主張（例：会社法上の義務、税法上の義務）。"
   - id: AccountingDisclosure
     module: normative-status
     kind: individual
@@ -322,6 +344,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "会計・財務報告ルール（例：財務諸表等規則、IFRS-as-adopted）により要求される開示としての規範根拠を持つ主張。"
+    scope_note_ja: "貸借対照表項目、借入金明細、その他の財務諸表上の定量的エビデンスに使用する。"
   - id: GovernanceDisclosure
     module: normative-status
     kind: individual
@@ -335,6 +359,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "コーポレートガバナンス開示ルール（CGコード原則、JPX上場規則、ガバナンス報告書項目）に基づいて開示された主張。"
   - id: InstitutionalExpectation
     module: normative-status
     kind: individual
@@ -348,6 +373,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "法的拘束力はないが広く観察される制度的規範に関する主張（例：メインバンクのモニタリング、系列協調）。"
+    scope_note_ja: "常にinformationStatus = Hypothesized または EvidenceBackedInferredと併用する。法的義務の代替として使ってはならない。"
   - id: InferredHypothesis
     module: normative-status
     kind: individual
@@ -364,6 +391,8 @@ terms:
   # =========================================================================
   # Reporting regime
   # =========================================================================
+    definition_ja: "J-FIBO利用者の推論としてのみ存在し、外部の規範的根拠を持たない主張。"
+    scope_note_ja: "informationStatus = Hypothesizedと併用する。MainBankCandidateのSHACL形状はこれを既に強制する。"
   - id: ReportingRegime
     module: reporting-regime
     kind: class
@@ -377,6 +406,7 @@ terms:
     session: 2026-05-25-v0.2-finalize
     scope_note_en: Sourced from the FSA EDINET taxonomy and supporting cabinet-office ordinances and JPX listing rules.
 
+    definition_ja: "主張が要求されるまたは開示される日本の報告レジームを識別する閉じた語彙。"
   - id: CompaniesAct
     module: reporting-regime
     kind: individual
@@ -390,6 +420,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "会社法（平成17年法律第86号）レジーム。株式会社およびその他の会社形態を規律する。"
+    scope_note_ja: "会社形態主張・法定役員主張・株主総会決議・株式発行授権等に使用する。"
   - id: FinancialInstrumentsAndExchangeAct
     module: reporting-regime
     kind: individual
@@ -403,6 +435,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "金融商品取引法（昭和23年法律第25号、FIEL）レジーム。"
+    scope_note_ja: "FIELおよび企業内容等の開示に関する内閣府令を根拠とするEDINET提出開示に使用する。"
   - id: CabinetOfficeOrdinanceOnCorporateDisclosure
     module: reporting-regime
     kind: individual
@@ -416,6 +450,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "企業内容等の開示に関する内閣府令。FIELの下位法令として開示の様式を定める。"
+    scope_note_ja: "特定の様式・節レベルのエビデンスを参照する際の根拠として使用する。多くのEDINET概念は当該府令の特定の様式を参照している。"
   - id: JPXListingRules
     module: reporting-regime
     kind: individual
@@ -429,6 +465,7 @@ terms:
     session: 2026-05-25-v0.2-finalize
     scope_note_en: Use only for TSE-listing-driven disclosures; non-listed entity disclosures should not cite this regime.
 
+    definition_ja: "東京証券取引所（JPX）の上場規則レジーム。"
   - id: JapanCGCode
     module: reporting-regime
     kind: individual
@@ -442,6 +479,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "コーポレートガバナンス・コード（JPX/金融庁）レジーム。"
+    scope_note_ja: "コンプライ・オア・エクスプレイン型。normativeStatus = GovernanceDisclosure または InstitutionalExpectationと併用する。"
   - id: BankingActOfJapan
     module: reporting-regime
     kind: individual
@@ -458,6 +497,7 @@ terms:
   # =========================================================================
   # Document type (EDINET document forms)
   # =========================================================================
+    definition_ja: "銀行法（昭和56年法律第59号）レジーム。"
   - id: DocumentType
     module: document-type
     kind: class
@@ -471,6 +511,7 @@ terms:
     session: 2026-05-25-v0.2-finalize
     scope_note_en: Aligned to the EDINET document-type codes that appear in jpdei_cor:DocumentTypeDEI.
 
+    definition_ja: "J-FIBOにおける開示書類の種別を表す閉じた語彙。"
   - id: AnnualSecuritiesReport
     module: document-type
     kind: individual
@@ -484,6 +525,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "有価証券報告書。FIEL第24条に基づき提出される年次開示書類。"
+    scope_note_ja: "EDINET docTypeCode 120。J-FIBOの第一次的エビデンスソース書類。"
   - id: QuarterlySecuritiesReport
     module: document-type
     kind: individual
@@ -497,6 +540,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "四半期報告書。FIEL第24条の4の7に基づく四半期開示書類。"
   - id: SemiAnnualSecuritiesReport
     module: document-type
     kind: individual
@@ -510,6 +554,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "半期報告書。FIEL第24条の5に基づく半期開示書類。"
   - id: CorporateGovernanceReport
     module: document-type
     kind: individual
@@ -523,6 +568,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "コーポレート・ガバナンス報告書。JPX上場規則に基づきTDnet経由で提出される。"
+    scope_note_ja: "EDINET書類ではない。TDnet経由で提出。ガバナンスおよび政策保有株式に関する主張のエビデンスソースとして使用する。"
   - id: LargeShareholdingReport
     module: document-type
     kind: individual
@@ -536,6 +583,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "大量保有報告書。FIEL第27条の23に基づき5%超の株式保有者が提出する。"
+    scope_note_ja: "EDINET docTypeCode 350 / 360。有価証券報告書の大株主表を超える相互保有エビデンスにとって重要。"
   - id: ExtraordinaryReport
     module: document-type
     kind: individual
@@ -552,6 +601,8 @@ terms:
   # =========================================================================
   # Holder role (the trustee vs beneficial vs custody distinction)
   # =========================================================================
+    definition_ja: "臨時報告書。FIEL第24条の5第4項に基づく臨時的な開示書類。"
+    scope_note_ja: "EDINET docTypeCode 180。M&Aの対価、第三者割当の引受人、解散事象等を扱うことがある。"
   - id: HolderRole
     module: holder-role
     kind: class
@@ -559,12 +610,14 @@ terms:
     parent: skos:Concept
     labels: {ja: 保有者役割, en: holder role}
     definition_en: Closed vocabulary for the role a shareholder plays — beneficial owner, registered holder, trustee, custody bank, standing proxy, ADR depositary, or individual shareholder.
-    scope_note_en: This distinction is critical in Japanese MajorShareholders tables; trust banks (信託口) and custody banks frequently appear as the largest registered holders without being the beneficial owners.
+    scope_note_en: This distinction is critical in Japanese MajorShareholders tables; trust banks (信託口) and custody banks frequently appear as the largest registered holders without being the 
+      beneficial owners.
     sources: ["https://disclosure2.edinet-fsa.go.jp/"]
     status: proposed
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "保有者の役割を表す閉じた語彙——実質保有者・名義保有者・受託者・名義管理人・カストディアン・戦略保有・純投資・政策保有。"
   - id: BeneficialHolder
     module: holder-role
     kind: individual
@@ -578,6 +631,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "株式の経済的利益を実際に享受する保有者。"
   - id: RegisteredHolder
     module: holder-role
     kind: individual
@@ -591,6 +645,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "株主名簿上の名義人。実質保有者と必ずしも一致しない（信託銀行・カストディアン経由の保有が代表例）。"
   - id: Trustee
     module: holder-role
     kind: individual
@@ -604,6 +659,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "信託の受託者として株式を保有する主体。日本市場では信託銀行が中心。"
   - id: CustodyBank
     module: holder-role
     kind: individual
@@ -617,6 +673,7 @@ terms:
     session: 2026-05-25-v0.2-finalize
     scope_note_en: Custody banks should not be conflated with beneficial owners in cross-shareholding analyses.
 
+    definition_ja: "カストディサービスを提供し、顧客のために株式を保管・名義人として保有する銀行。"
   - id: StandingProxy
     module: holder-role
     kind: individual
@@ -630,6 +687,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "常任代理人。外国人投資家に代わって日本における権利行使等を行う代理人。"
   - id: ADRDepositary
     module: holder-role
     kind: individual
@@ -643,6 +701,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "ADR（米国預託証券）の発行に伴い原株を保有する預託銀行。"
   - id: IndividualShareholder
     module: holder-role
     kind: individual
@@ -659,6 +718,7 @@ terms:
   # =========================================================================
   # Atomic claim types
   # =========================================================================
+    definition_ja: "個人株主。法人ではない自然人としての株式保有者。"
   - id: DisclosureClaim
     module: disclosure-claim
     kind: class
@@ -672,6 +732,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "開示主張。情報源・時点・有効性・情報ステータス・規範ステータス（任意）を伴う、開示書類から抽出または推論された監査可能な主張。"
+    scope_note_ja: "原子的（atomic）。具体的な主張形状にはサブクラスを使用すること（PolicyShareholding, MajorShareholderClaim, BorrowingsClaim, MainBankCandidate, CrossShareholdingClaim）。"
   - id: EvidenceItem
     module: disclosure-claim
     kind: class
@@ -685,6 +747,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "エビデンス項目。引用されたソースフラグメント・タクソノミファクト・表の行・テキストブロック・書類セクション等、開示主張を裏付ける単位。"
+    scope_note_ja: "可能な限りEDINET要素名またはソースロケータを保持すること。"
   - id: PolicyShareholding
     module: disclosure-claim
     kind: class
@@ -704,6 +768,8 @@ terms:
       - jpcrp_cor:PurposesOfHoldingDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany
       - jpcrp_cor:QuantitativeEffectsOfShareholdingDetailsOfSpecifiedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany
 
+    definition_ja: "政策保有株式。純投資以外の目的で保有する開示済株式を、所有エッジではなくエビデンス付き開示主張として表現する。"
+    scope_note_ja: "純投資以外の目的で保有する特定投資株式に関するEDINET要素にアライン。jfibo:hasHoldingPurposeおよび引用エビデンスを併用する。"
   - id: MajorShareholderClaim
     module: disclosure-claim
     kind: class
@@ -719,6 +785,8 @@ terms:
     edinet_elements:
       - jpcrp_cor:MajorShareholdersTextBlock
 
+    definition_ja: "大株主主張。有価証券報告書または大量保有報告書から得られる、上位株主の名称・株数・保有比率に関する開示主張。"
+    scope_note_ja: "常にHolderRoleと併用する。信託銀行からの名義保有者行を実質保有と混同してはならない。"
   - id: BorrowingsClaim
     module: disclosure-claim
     kind: class
@@ -735,6 +803,8 @@ terms:
       - jpcrp_cor:AnnexedDetailedScheduleOfBorrowingsFinancialStatementsTextBlock
       - jpcrp_cor:AnnexedConsolidatedDetailedScheduleOfBorrowingsTextBlock
 
+    definition_ja: "借入金主張。借入金等明細表をエビデンスとする、企業の借入残高に関する開示主張。"
+    scope_note_ja: "貸し手の役割は、通常の銀行・企業ローンと異なる場合に明示的にタグ付けすること。"
   - id: CrossShareholdingClaim
     module: institutional-context
     kind: class
@@ -748,6 +818,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "相互保有主張。二つの主体が相互に株式または経済的に意味のある所有権を保有していることのエビデンス付き主張。"
+    scope_note_ja: "二つの別個に立証された保有主張（PolicyShareholdingまたはMajorShareholderClaim）を必要とする。相互保有のみから安定的提携・支配・将来支援を推論してはならない。"
   - id: MainBankCandidate
     module: institutional-context
     kind: class
@@ -761,6 +833,8 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "メインバンク候補。ある銀行がある主体の主要貸し手・モニタリング主体・経営悪化時の調整カウンターパーティとして機能する可能性に関するエビデンス付き仮説。"
+    scope_note_ja: "契約関係ではなく、将来の支援保証でもない。開示された借入・株式保有・継続性・明示的なナラティブエビデンスからのみインスタンス化する。"
   - id: InstitutionalRelationshipHypothesis
     module: institutional-context
     kind: class
@@ -777,6 +851,8 @@ terms:
   # =========================================================================
   # Properties (with explicit domains/ranges where useful)
   # =========================================================================
+    definition_ja: "制度的関係仮説。系列・業務提携・資本提携等、開示エビデンスを超えた制度的関係に関する仮説的主張の親概念。"
+    scope_note_ja: "エビデンス閾値および情報ステータスが推論された主張を正当化する場合を除き、事実的開示の外に置くこと。"
   - id: informationStatus
     module: information-status
     kind: object_property
@@ -788,10 +864,11 @@ terms:
     sources: ["https://www.w3.org/TR/skos-reference/"]
     status: proposed
     domain: DisclosureClaim
-    range:  InformationStatus
+    range: InformationStatus
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "主張をJ-FIBOの情報ステータスと関連付けるプロパティ。"
   - id: normativeStatus
     module: normative-status
     kind: object_property
@@ -803,10 +880,12 @@ terms:
     sources: ["https://www.w3.org/TR/skos-reference/"]
     status: proposed
     domain: DisclosureClaim
-    range:  NormativeStatus
+    range: NormativeStatus
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "主張を法的義務・会計開示・ガバナンス開示・制度的期待・推論仮説のいずれかの規範ステータスと関連付けるプロパティ。"
+    scope_note_ja: "informationStatusと直交する。一つの主張がそれぞれ一つずつを持つことができる。"
   - id: reportingRegime
     module: reporting-regime
     kind: object_property
@@ -817,11 +896,12 @@ terms:
     sources: ["https://www.w3.org/TR/skos-reference/"]
     status: proposed
     domain: DisclosureClaim
-    range:  ReportingRegime
+    range: ReportingRegime
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
     scope_note_en: May be omitted when the regime is implied by the document type.
 
+    definition_ja: "主張をそれを要求または規律する日本の報告レジームと関連付けるプロパティ。"
   - id: documentType
     module: document-type
     kind: object_property
@@ -832,11 +912,12 @@ terms:
     sources: ["https://www.w3.org/TR/skos-reference/"]
     status: proposed
     domain: EDINETDisclosureDocument
-    range:  DocumentType
+    range: DocumentType
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
     scope_note_en: Should match the EDINET docTypeCode metadata when present.
 
+    definition_ja: "EDINET開示書類をその書類種別と関連付けるプロパティ。"
   - id: holderRole
     module: holder-role
     kind: object_property
@@ -848,10 +929,11 @@ terms:
     sources: ["https://www.w3.org/TR/skos-reference/"]
     status: proposed
     domain: MajorShareholderClaim
-    range:  HolderRole
+    range: HolderRole
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "大株主主張をその保有者が果たす役割と関連付けるプロパティ。"
   - id: withinInformationSet
     module: information-status
     kind: object_property
@@ -865,6 +947,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "主張をその情報セット境界と関連付けるプロパティ。"
   - id: mapsToEdinetElement
     module: edinet-alignment
     kind: object_property
@@ -878,6 +961,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "J-FIBO概念または個体をEDINETタクソノミ要素にマッピングするプロパティ。"
   - id: hasInvestor
     module: disclosure-claim
     kind: object_property
@@ -892,6 +976,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "保有関係における投資家側を関連付けるプロパティ。"
   - id: hasIssuer
     module: disclosure-claim
     kind: object_property
@@ -905,6 +990,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
+    definition_ja: "保有関係における発行体側を関連付けるプロパティ。"
   - id: hasHolder
     module: disclosure-claim
     kind: object_property
@@ -919,34 +1005,37 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "主張をその保有者と関連付けるプロパティ。"
   - id: hasLender
     module: disclosure-claim
     kind: object_property
     level: propose
     parent: prov:wasAttributedTo
     labels: {ja: 貸出元, en: has lender}
-    definition_en: Relates a borrowings claim to the lender entity.
-    scope_note_en: "Use only on borrowings claims; pair with an entity resolver output for the lender."
+    definition_en: Relates a disclosure claim to the lender entity. Used on BorrowingsClaim (disclosed lender) and MainBankCandidate (hypothesized main bank).
+    scope_note_en: "Pair with an entity resolver output for the lender. For MainBankCandidate, the relationship is hypothesized; for BorrowingsClaim, disclosed."
     sources: ["https://www.fsa.go.jp/search/20251111.html"]
     status: proposed
-    domain: BorrowingsClaim
+    domain: DisclosureClaim
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "開示主張を貸し手と関連付けるプロパティ。BorrowingsClaim（開示された貸し手）およびMainBankCandidate（仮説的なメインバンク）で使用する。"
   - id: hasBorrower
     module: disclosure-claim
     kind: object_property
     level: propose
     parent: dcterms:subject
     labels: {ja: 借入元, en: has borrower}
-    definition_en: Relates a borrowings claim to the borrower entity (typically the reporting company).
-    scope_note_en: "Use only on borrowings claims; the borrower is typically the EDINET reporting company."
+    definition_en: Relates a disclosure claim to the borrower entity (typically the reporting company).
+    scope_note_en: "Used on BorrowingsClaim (disclosed) and other lender/borrower-shaped claims."
     sources: ["https://www.fsa.go.jp/search/20251111.html"]
     status: proposed
-    domain: BorrowingsClaim
+    domain: DisclosureClaim
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "開示主張を借り手主体（通常は報告会社）と関連付けるプロパティ。"
   - id: hasHoldingPurpose
     module: disclosure-claim
     kind: datatype_property
@@ -962,6 +1051,7 @@ terms:
     edinet_elements:
       - jpcrp_cor:PurposesOfHoldingDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany
 
+    definition_ja: "政策保有株式の保有目的を関連付けるプロパティ。"
   - id: hasCarryingAmount
     module: disclosure-claim
     kind: datatype_property
@@ -977,6 +1067,7 @@ terms:
     edinet_elements:
       - jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany
 
+    definition_ja: "保有または借入の帳簿価額を表す数値プロパティ。"
   - id: hasShareCount
     module: disclosure-claim
     kind: datatype_property
@@ -992,6 +1083,7 @@ terms:
     edinet_elements:
       - jpcrp_cor:NumberOfSharesHeldDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany
 
+    definition_ja: "保有株数を表す数値プロパティ。"
   - id: hasOwnershipPercentage
     module: disclosure-claim
     kind: datatype_property
@@ -1005,6 +1097,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.2-finalize
 
+    definition_ja: "発行済株式総数に対する保有割合（%）を表す数値プロパティ。"
   - id: hasShareholderRank
     module: disclosure-claim
     kind: datatype_property
@@ -1018,6 +1111,7 @@ terms:
     session: 2026-05-25-v0.2-finalize
     scope_note_en: When ties exist, use the order given in the table; do not invent ranks.
 
+    definition_ja: "大株主一覧における順位を表す数値プロパティ。"
   - id: hasEvidenceElement
     module: edinet-alignment
     kind: object_property
@@ -1034,20 +1128,22 @@ terms:
   # =========================================================================
   # v0.5 — official EDINET XBRL metadata annotations on alignment concepts
   # =========================================================================
+    definition_ja: "エビデンス項目をその対応するEDINET要素名と関連付けるプロパティ。"
   - id: xbrlPeriodType
     module: edinet-alignment
     kind: annotation_property
     level: propose
     parent: rdfs:comment
     labels: {ja: XBRL期間区分, en: XBRL period type}
-    definition_en: The XBRL periodType attribute (`instant` or `duration`) declared by the official EDINET taxonomy for an aligned element. Carried verbatim so consumers can validate temporal semantics without re-fetching the XBRL schema.
+    definition_en: The XBRL periodType attribute (`instant` or `duration`) declared by the official EDINET taxonomy for an aligned element. Carried verbatim so consumers can validate temporal 
+      semantics without re-fetching the XBRL schema.
     sources: ["https://www.fsa.go.jp/search/20251111.html"]
     scope_note_en: "Read this as evidence about the source element, not as a constraint J-FIBO imposes."
     status: proposed
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
-    scope_note_en: Read this as evidence about the source element, not as a constraint J-FIBO imposes.
 
+    definition_ja: "EDINET要素のXBRL期間タイプ（instant / duration）を表すプロパティ。"
   - id: xbrlType
     module: edinet-alignment
     kind: annotation_property
@@ -1061,6 +1157,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "EDINET要素のXBRLデータ型を表すプロパティ。"
   - id: xbrlAbstract
     module: edinet-alignment
     kind: annotation_property
@@ -1074,6 +1171,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "EDINET要素が抽象要素であるかを表すブール型プロパティ。"
   - id: xbrlPrefix
     module: edinet-alignment
     kind: annotation_property
@@ -1087,6 +1185,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "EDINET要素のXBRL名前空間プレフィックス（例：jpcrp_cor）を表すプロパティ。"
   - id: hasOfficialJapaneseLabel
     module: edinet-alignment
     kind: annotation_property
@@ -1103,19 +1202,23 @@ terms:
   # =========================================================================
   # v0.5 — CommercialPaperClaim (depth on bank/funding disclosures)
   # =========================================================================
+    definition_ja: "EDINETタクソノミにおける公式日本語ラベルを保持するプロパティ。"
+    scope_note_ja: "v1.2でCMNS注釈プロパティへの移行が予定されている。"
   - id: CommercialPaperClaim
     module: disclosure-claim
     kind: class
     level: propose
     parent: DisclosureClaim
     labels: {ja: コマーシャル・ペーパー残高開示, en: commercial paper claim}
-    definition_en: A disclosure claim about commercial-paper issuance, typically the parenthetical schedule appended to the borrowings table for banks and other treasury-active filers. One claim per row (issuance program or period).
+    definition_en: A disclosure claim about commercial-paper issuance, typically the parenthetical schedule appended to the borrowings table for banks and other treasury-active filers. One claim per 
+      row (issuance program or period).
     scope_note_en: For banks, CP issuance is reported alongside but separately from 借入金等明細表; we model it as its own atomic claim so totals are not double-counted.
     sources: ["https://www.fsa.go.jp/search/20251111.html"]
     status: proposed
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "コマーシャル・ペーパー主張。短期社債（CP）の発行残高および条件に関する開示主張。"
   - id: hasOpeningBalance
     module: disclosure-claim
     kind: datatype_property
@@ -1129,6 +1232,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "期首残高を表す数値プロパティ。"
   - id: hasClosingBalance
     module: disclosure-claim
     kind: datatype_property
@@ -1142,6 +1246,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "期末残高を表す数値プロパティ。"
   - id: hasAverageRate
     module: disclosure-claim
     kind: datatype_property
@@ -1155,6 +1260,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "平均利率を表す数値プロパティ。"
   - id: hasRepaymentDeadline
     module: disclosure-claim
     kind: datatype_property
@@ -1168,6 +1274,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "返済期限を表す日付プロパティ。"
   - id: hasBorrowingsClassLabel
     module: disclosure-claim
     kind: datatype_property
@@ -1181,6 +1288,7 @@ terms:
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
 
+    definition_ja: "借入金の種類（短期・長期・社債等）を表すラベルプロパティ。"
   - id: hasUnitLabel
     module: disclosure-claim
     kind: datatype_property
@@ -1193,3 +1301,4 @@ terms:
     status: proposed
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.5-coverage
+    definition_ja: "金額単位（百万円・千円等）を表すラベルプロパティ。"

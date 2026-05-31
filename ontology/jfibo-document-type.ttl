@@ -9,10 +9,12 @@ jfibo:AnnualSecuritiesReport a owl:NamedIndividual,
         jfibo:DocumentType ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/document-type/> ;
-    skos:definition "The annual securities report (有報) filed under FIEL."@en ;
+    skos:definition "The annual securities report (有報) filed under FIEL."@en,
+        "有価証券報告書。FIEL第24条に基づき提出される年次開示書類。"@ja ;
     skos:prefLabel "annual securities report"@en,
         "有価証券報告書"@ja ;
-    skos:scopeNote "EDINET docTypeCode 120; the primary J-FIBO evidence-source document."@en ;
+    skos:scopeNote "EDINET docTypeCode 120; the primary J-FIBO evidence-source document."@en,
+        "EDINET docTypeCode 120。J-FIBOの第一次的エビデンスソース書類。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -22,10 +24,12 @@ jfibo:CorporateGovernanceReport a owl:NamedIndividual,
         jfibo:DocumentType ;
     dcterms:source <https://www.jpx.co.jp/english/equities/listing/cg/index.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/document-type/> ;
-    skos:definition "Corporate Governance Report filed under JPX listing rules."@en ;
+    skos:definition "Corporate Governance Report filed under JPX listing rules."@en,
+        "コーポレート・ガバナンス報告書。JPX上場規則に基づきTDnet経由で提出される。"@ja ;
     skos:prefLabel "corporate governance report"@en,
         "コーポレート・ガバナンス報告書"@ja ;
-    skos:scopeNote "Not an EDINET document; filed through TDnet. Use as evidence source for governance and policy-shareholding claims."@en ;
+    skos:scopeNote "Not an EDINET document; filed through TDnet. Use as evidence source for governance and policy-shareholding claims."@en,
+        "EDINET書類ではない。TDnet経由で提出。ガバナンスおよび政策保有株式に関する主張のエビデンスソースとして使用する。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -35,10 +39,12 @@ jfibo:ExtraordinaryReport a owl:NamedIndividual,
         jfibo:DocumentType ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/document-type/> ;
-    skos:definition "Extraordinary report filed under FIEL when material events occur."@en ;
+    skos:definition "Extraordinary report filed under FIEL when material events occur."@en,
+        "臨時報告書。FIEL第24条の5第4項に基づく臨時的な開示書類。"@ja ;
     skos:prefLabel "extraordinary report"@en,
         "臨時報告書"@ja ;
-    skos:scopeNote "EDINET docTypeCode 180; can carry M&A consideration, third-party-allotment shareholders, and dissolution events."@en ;
+    skos:scopeNote "EDINET docTypeCode 180; can carry M&A consideration, third-party-allotment shareholders, and dissolution events."@en,
+        "EDINET docTypeCode 180。M&Aの対価、第三者割当の引受人、解散事象等を扱うことがある。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -48,10 +54,12 @@ jfibo:LargeShareholdingReport a owl:NamedIndividual,
         jfibo:DocumentType ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/document-type/> ;
-    skos:definition "Large-shareholding report (5% Rule) filed under FIEL."@en ;
+    skos:definition "Large-shareholding report (5% Rule) filed under FIEL."@en,
+        "大量保有報告書。FIEL第27条の23に基づき5%超の株式保有者が提出する。"@ja ;
     skos:prefLabel "large-shareholding report"@en,
         "大量保有報告書"@ja ;
-    skos:scopeNote "EDINET docTypeCode 350 / 360; critical for cross-shareholding evidence beyond the securities-report top-10 table."@en ;
+    skos:scopeNote "EDINET docTypeCode 350 / 360; critical for cross-shareholding evidence beyond the securities-report top-10 table."@en,
+        "EDINET docTypeCode 350 / 360。有価証券報告書の大株主表を超える相互保有エビデンスにとって重要。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -61,7 +69,8 @@ jfibo:QuarterlySecuritiesReport a owl:NamedIndividual,
         jfibo:DocumentType ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/document-type/> ;
-    skos:definition "Quarterly securities report under FIEL."@en ;
+    skos:definition "Quarterly securities report under FIEL."@en,
+        "四半期報告書。FIEL第24条の4の7に基づく四半期開示書類。"@ja ;
     skos:prefLabel "quarterly securities report"@en,
         "四半期報告書"@ja ;
     skos:scopeNote "EDINET docTypeCode 140."@en ;
@@ -74,7 +83,8 @@ jfibo:SemiAnnualSecuritiesReport a owl:NamedIndividual,
         jfibo:DocumentType ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/document-type/> ;
-    skos:definition "Semi-annual securities report under FIEL."@en ;
+    skos:definition "Semi-annual securities report under FIEL."@en,
+        "半期報告書。FIEL第24条の5に基づく半期開示書類。"@ja ;
     skos:prefLabel "semi-annual securities report"@en,
         "半期報告書"@ja ;
     skos:scopeNote "EDINET docTypeCode 160 (post-2024 replacement of 四半期報告書 for many filers)."@en ;
@@ -89,7 +99,8 @@ jfibo:documentType a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/document-type/> ;
     rdfs:range jfibo:DocumentType ;
     rdfs:subPropertyOf dcterms:type ;
-    skos:definition "Relates an EDINET disclosure document to its J-FIBO document type."@en ;
+    skos:definition "Relates an EDINET disclosure document to its J-FIBO document type."@en,
+        "EDINET開示書類をその書類種別と関連付けるプロパティ。"@ja ;
     skos:prefLabel "document type"@en,
         "開示書類種別"@ja ;
     skos:scopeNote "Should match the EDINET docTypeCode metadata when present."@en ;
@@ -102,7 +113,8 @@ jfibo:DocumentType a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/document-type/> ;
     rdfs:subClassOf skos:Concept ;
-    skos:definition "Closed vocabulary for Japanese disclosure document forms (有価証券報告書, 四半期報告書, コーポレート・ガバナンス報告書, 大量保有報告書, 臨時報告書)."@en ;
+    skos:definition "Closed vocabulary for Japanese disclosure document forms (有価証券報告書, 四半期報告書, コーポレート・ガバナンス報告書, 大量保有報告書, 臨時報告書)."@en,
+        "J-FIBOにおける開示書類の種別を表す閉じた語彙。"@ja ;
     skos:prefLabel "disclosure document type"@en,
         "開示書類種別"@ja ;
     skos:scopeNote "Aligned to the EDINET document-type codes that appear in jpdei_cor:DocumentTypeDEI."@en ;

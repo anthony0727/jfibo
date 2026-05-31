@@ -5,6 +5,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <urn:jfibo:claim:S100VYN4/major-shareholder/rank01> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
@@ -1550,3 +1551,29 @@
     owl:sameAs <https://w3id.org/jfibo/entity/jcn/5120001059660> ;
     skos:prefLabel "伊藤忠商事株式会社"@ja .
 
+
+
+# MainBankCandidate (v1.1)
+<https://w3id.org/jfibo/claim/main-bank-candidate/S100VYN4/dd3577879c8f> a jfibo:MainBankCandidate ;
+    dcterms:valid "2025-03-31"^^xsd:date ;
+    rdfs:comment "Hypothesized main-bank candidacy: 株式会社みずほ銀行 appears as a RegisteredHolder of 伊藤忠商事株式会社 (rank 6, 2.2%) in the FY annual securities report. Direct equity holding by a commercial bank or bank holding company is a Japanese keiretsu main-bank signal, but candidacy is not confirmation; corroborate with borrowings schedule."@en ;
+    prov:generatedAtTime "2026-05-31T16:26:43+00:00"^^xsd:dateTime ;
+    prov:wasDerivedFrom <https://w3id.org/jfibo/evidence/edinet-document/S100VYN4>,
+        <https://w3id.org/jfibo/evidence/major-shareholder-row/S100VYN4/rank-6> ;
+    jfibo:hasIssuer <urn:jfibo:issuer-fallback:b1600c583176> ;
+    jfibo:hasLender <https://w3id.org/jfibo/entity/name/01407252c467> ;
+    jfibo:informationStatus jfibo:Hypothesized ;
+    jfibo:normativeStatus jfibo:InstitutionalExpectation ;
+    jfibo:reportingRegime jfibo:FinancialInstrumentsAndExchangeAct .
+
+<https://w3id.org/jfibo/document/edinet/S100VYN4> a jfibo:EDINETDisclosureDocument .
+
+<https://w3id.org/jfibo/entity/name/01407252c467> rdfs:label "株式会社みずほ銀行"@ja .
+
+<https://w3id.org/jfibo/evidence/edinet-document/S100VYN4> a jfibo:EvidenceItem ;
+    rdfs:label "EDINET disclosure document S100VYN4 (伊藤忠商事株式会社)"@en ;
+    dcterms:source <https://disclosure2.edinet-fsa.go.jp/api/v2/documents/S100VYN4> .
+
+<https://w3id.org/jfibo/evidence/major-shareholder-row/S100VYN4/rank-6> a jfibo:EvidenceItem ;
+    rdfs:label "major-shareholders row rank 6, holder 株式会社みずほ銀行, 2.2%"@en ;
+    dcterms:source <https://disclosure2.edinet-fsa.go.jp/api/v2/documents/S100VYN4> .

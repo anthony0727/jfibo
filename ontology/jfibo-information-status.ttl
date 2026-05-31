@@ -22,10 +22,12 @@ jfibo:Disclosed a owl:NamedIndividual,
         jfibo:InformationStatus ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/information-status/> ;
-    skos:definition "A fact stated in an official disclosure document or other cited public source."@en ;
+    skos:definition "A fact stated in an official disclosure document or other cited public source."@en,
+        "公式の開示書類またはその他の引用可能な公開ソースに記載された事実。"@ja ;
     skos:prefLabel "disclosed"@en,
         "開示済み"@ja ;
-    skos:scopeNote "Does not by itself assert the fact is economically causal or predictive."@en ;
+    skos:scopeNote "Does not by itself assert the fact is economically causal or predictive."@en,
+        "それ自体は、ファクトが経済的に因果的または予測的であることを主張しない。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -35,10 +37,12 @@ jfibo:EvidenceBackedInferred a owl:NamedIndividual,
         jfibo:InformationStatus ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/information-status/> ;
-    skos:definition "A claim inferred from cited evidence under an explicit rule or pattern."@en ;
+    skos:definition "A claim inferred from cited evidence under an explicit rule or pattern."@en,
+        "引用されたエビデンスから明示的な規則またはパターンに基づいて推論された主張。"@ja ;
     skos:prefLabel "evidence-backed inferred"@en,
         "証拠付き推論"@ja ;
-    skos:scopeNote "Must cite the rule or evidence pattern and must not be collapsed into disclosed fact."@en ;
+    skos:scopeNote "Must cite the rule or evidence pattern and must not be collapsed into disclosed fact."@en,
+        "規則またはエビデンスパターンを引用し、開示済事実と同一視してはならない。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -48,10 +52,12 @@ jfibo:Hypothesized a owl:NamedIndividual,
         jfibo:InformationStatus ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/information-status/> ;
-    skos:definition "A plausible but not evidence-sufficient claim."@en ;
+    skos:definition "A plausible but not evidence-sufficient claim."@en,
+        "もっともらしいが、エビデンスとしては不十分な主張。"@ja ;
     skos:prefLabel "hypothesized"@en,
         "仮説"@ja ;
-    skos:scopeNote "Use for exploratory institutional patterns such as main-bank candidates before SHACL evidence thresholds are met."@en ;
+    skos:scopeNote "Use for exploratory institutional patterns such as main-bank candidates before SHACL evidence thresholds are met."@en,
+        "SHACLのエビデンス閾値が満たされる前のメインバンク候補等、探索的な制度的パターンに使用する。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -74,10 +80,12 @@ jfibo:InformationSet a owl:Class ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/information-status/> ;
     rdfs:subClassOf prov:Entity ;
-    skos:definition "The bounded set of records, observations, disclosures, and derivations available to an explanation at a stated time."@en ;
+    skos:definition "The bounded set of records, observations, disclosures, and derivations available to an explanation at a stated time."@en,
+        "ある説明が時点において利用可能とする、レコード・観測・開示・派生事実の有界な集合。"@ja ;
     skos:prefLabel "information set"@en,
         "情報集合"@ja ;
-    skos:scopeNote "Use to separate auditable evidence from unavailable latent variables, counterfactuals, and predictions."@en ;
+    skos:scopeNote "Use to separate auditable evidence from unavailable latent variables, counterfactuals, and predictions."@en,
+        "監査可能なエビデンスと、利用できない潜在変数・反実仮想・予測を区別するために使用する。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -87,10 +95,12 @@ jfibo:Observed a owl:NamedIndividual,
         jfibo:InformationStatus ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/information-status/> ;
-    skos:definition "A fact directly observed in machine-readable data or curated evidence."@en ;
+    skos:definition "A fact directly observed in machine-readable data or curated evidence."@en,
+        "機械可読データまたは整備されたエビデンスにおいて直接観測された事実。"@ja ;
     skos:prefLabel "observed"@en,
         "観測済み"@ja ;
-    skos:scopeNote "Stronger than disclosed when the fact is directly available as structured data."@en ;
+    skos:scopeNote "Stronger than disclosed when the fact is directly available as structured data."@en,
+        "ファクトが構造化データとして直接利用可能な場合、Disclosedより強い。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -128,7 +138,8 @@ jfibo:informationStatus a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/information-status/> ;
     rdfs:range jfibo:InformationStatus ;
     rdfs:subPropertyOf dcterms:type ;
-    skos:definition "Relates a claim to its J-FIBO information status."@en ;
+    skos:definition "Relates a claim to its J-FIBO information status."@en,
+        "主張をJ-FIBOの情報ステータスと関連付けるプロパティ。"@ja ;
     skos:prefLabel "information status"@en,
         "情報状態"@ja ;
     skos:scopeNote "Range should be one of the named individuals of jfibo:InformationStatus."@en ;
@@ -141,7 +152,8 @@ jfibo:withinInformationSet a owl:ObjectProperty ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/information-status/> ;
     rdfs:subPropertyOf prov:wasDerivedFrom ;
-    skos:definition "Relates a claim to the information set inside whose boundary it is auditable."@en ;
+    skos:definition "Relates a claim to the information set inside whose boundary it is auditable."@en,
+        "主張をその情報セット境界と関連付けるプロパティ。"@ja ;
     skos:prefLabel "within information set"@en,
         "情報集合内"@ja ;
     skos:scopeNote "Use together with jfibo:informationStatus to prevent outside-boundary explanations."@en ;
@@ -154,7 +166,8 @@ jfibo:InformationStatus a owl:Class ;
     dcterms:source <https://www.w3.org/TR/skos-reference/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/information-status/> ;
     rdfs:subClassOf skos:Concept ;
-    skos:definition "Closed status vocabulary for whether a claim is observed, disclosed, inferred, hypothesized, counterfactual, predicted, or outside the information boundary."@en ;
+    skos:definition "Closed status vocabulary for whether a claim is observed, disclosed, inferred, hypothesized, counterfactual, predicted, or outside the information boundary."@en,
+        "ある主張が観測済・開示済・推論済・仮説・反実仮想・予測・情報境界外のいずれであるかを表す閉じた語彙。"@ja ;
     skos:prefLabel "information status"@en,
         "情報状態"@ja ;
     skos:scopeNote "Use the named individuals in this scheme on jfibo:informationStatus."@en ;

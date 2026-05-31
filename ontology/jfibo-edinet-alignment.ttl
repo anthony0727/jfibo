@@ -705,7 +705,8 @@ jfibo:hasEvidenceElement a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
     rdfs:subPropertyOf prov:wasDerivedFrom ;
-    skos:definition "Relates a claim or evidence item to the EDINET taxonomy element from which it was extracted."@en ;
+    skos:definition "Relates a claim or evidence item to the EDINET taxonomy element from which it was extracted."@en,
+        "エビデンス項目をその対応するEDINET要素名と関連付けるプロパティ。"@ja ;
     skos:prefLabel "has evidence element"@en,
         "証拠EDINET要素"@ja ;
     skos:scopeNote "Use for claim-level traceability down to an XBRL concept or text block."@en ;
@@ -718,10 +719,12 @@ jfibo:hasOfficialJapaneseLabel a owl:AnnotationProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
     rdfs:subPropertyOf skos:altLabel ;
-    skos:definition "The \"terse\" Japanese label (冗長ラベル) declared by the FSA for an EDINET taxonomy element, carried verbatim so consumers can join on the exact disclosure wording."@en ;
+    skos:definition "The \"terse\" Japanese label (冗長ラベル) declared by the FSA for an EDINET taxonomy element, carried verbatim so consumers can join on the exact disclosure wording."@en,
+        "EDINETタクソノミにおける公式日本語ラベルを保持するプロパティ。"@ja ;
     skos:prefLabel "has official Japanese label"@en,
         "公式日本語ラベル"@ja ;
-    skos:scopeNote "Distinct from skos:prefLabel@ja because the terse/redundant Japanese label often differs from the heading-style standard label."@en ;
+    skos:scopeNote "Distinct from skos:prefLabel@ja because the terse/redundant Japanese label often differs from the heading-style standard label."@en,
+        "v1.2でCMNS注釈プロパティへの移行が予定されている。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.5-coverage> ;
     jfibo:level "propose" ;
@@ -731,7 +734,8 @@ jfibo:mapsToEdinetElement a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
     rdfs:subPropertyOf skos:relatedMatch ;
-    skos:definition "Links a J-FIBO term or evidence item to an EDINET taxonomy element used as its official reporting source."@en ;
+    skos:definition "Links a J-FIBO term or evidence item to an EDINET taxonomy element used as its official reporting source."@en,
+        "J-FIBO概念または個体をEDINETタクソノミ要素にマッピングするプロパティ。"@ja ;
     skos:prefLabel "maps to EDINET element"@en,
         "EDINET要素に対応"@ja ;
     skos:scopeNote "This is an alignment assertion, not a replacement for the official XBRL taxonomy."@en ;
@@ -744,7 +748,8 @@ jfibo:xbrlAbstract a owl:AnnotationProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
     rdfs:subPropertyOf rdfs:comment ;
-    skos:definition "Whether the EDINET taxonomy element is marked abstract (a tree node, not directly reportable). Carried verbatim from the official taxonomy."@en ;
+    skos:definition "Whether the EDINET taxonomy element is marked abstract (a tree node, not directly reportable). Carried verbatim from the official taxonomy."@en,
+        "EDINET要素が抽象要素であるかを表すブール型プロパティ。"@ja ;
     skos:prefLabel "XBRL abstract flag"@en,
         "XBRL抽象要素"@ja ;
     skos:scopeNote "Abstract elements are organizational headers; consumers should not expect a reported value."@en ;
@@ -757,7 +762,8 @@ jfibo:xbrlPeriodType a owl:AnnotationProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
     rdfs:subPropertyOf rdfs:comment ;
-    skos:definition "The XBRL periodType attribute (`instant` or `duration`) declared by the official EDINET taxonomy for an aligned element. Carried verbatim so consumers can validate temporal semantics without re-fetching the XBRL schema."@en ;
+    skos:definition "The XBRL periodType attribute (`instant` or `duration`) declared by the official EDINET taxonomy for an aligned element. Carried verbatim so consumers can validate temporal semantics without re-fetching the XBRL schema."@en,
+        "EDINET要素のXBRL期間タイプ（instant / duration）を表すプロパティ。"@ja ;
     skos:prefLabel "XBRL period type"@en,
         "XBRL期間区分"@ja ;
     skos:scopeNote "Read this as evidence about the source element, not as a constraint J-FIBO imposes."@en ;
@@ -770,7 +776,8 @@ jfibo:xbrlPrefix a owl:AnnotationProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
     rdfs:subPropertyOf rdfs:comment ;
-    skos:definition "The EDINET XBRL namespace prefix family (e.g. jpdei_cor, jpcrp_cor, jppfs_cor) of the aligned element."@en ;
+    skos:definition "The EDINET XBRL namespace prefix family (e.g. jpdei_cor, jpcrp_cor, jppfs_cor) of the aligned element."@en,
+        "EDINET要素のXBRL名前空間プレフィックス（例：jpcrp_cor）を表すプロパティ。"@ja ;
     skos:prefLabel "XBRL namespace prefix"@en,
         "XBRLプレフィックス"@ja ;
     skos:scopeNote "Use to group elements by EDINET prefix family (jpdei_cor, jpcrp_cor, jppfs_cor, jpsps_cor, jplvh_cor, jpaud_cor, jpctl_cor, jpigp_cor)."@en ;
@@ -783,7 +790,8 @@ jfibo:xbrlType a owl:AnnotationProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
     rdfs:subPropertyOf rdfs:comment ;
-    skos:definition "The XBRL `type` attribute (e.g. `xbrli:stringItemType`, `xbrli:monetaryItemType`) declared by the official EDINET taxonomy for an aligned element."@en ;
+    skos:definition "The XBRL `type` attribute (e.g. `xbrli:stringItemType`, `xbrli:monetaryItemType`) declared by the official EDINET taxonomy for an aligned element."@en,
+        "EDINET要素のXBRLデータ型を表すプロパティ。"@ja ;
     skos:prefLabel "XBRL item type"@en,
         "XBRLデータ型"@ja ;
     skos:scopeNote "Faithful copy from the EDINET XBRL schema; not interpreted by J-FIBO."@en ;
@@ -796,10 +804,12 @@ jfibo:EDINETTaxonomyElement a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
     rdfs:subClassOf skos:Concept ;
-    skos:definition "An XBRL taxonomy element from the EDINET taxonomy, represented as a SKOS concept for alignment and benchmark traceability."@en ;
+    skos:definition "An XBRL taxonomy element from the EDINET taxonomy, represented as a SKOS concept for alignment and benchmark traceability."@en,
+        "EDINET XBRLタクソノミの要素（element）をJ-FIBO側で参照可能とするためのアライメント概念。"@ja ;
     skos:prefLabel "EDINET taxonomy element"@en,
         "EDINETタクソノミ要素"@ja ;
-    skos:scopeNote "This is an alignment handle; the authoritative element remains the FSA-published EDINET XBRL taxonomy."@en ;
+    skos:scopeNote "This is an alignment handle; the authoritative element remains the FSA-published EDINET XBRL taxonomy."@en,
+        "アライメントハンドルであり、正本はFSA公表のEDINET XBRLタクソノミに帰属する。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;

@@ -393,6 +393,15 @@ def main() -> int:
     cs.serialize(destination=cs_out, format="turtle")
     n_pairs = len(set(cs.subjects(RDF.type, JPFIBO.CrossShareholdingClaim)))
     print(f"cross-shareholding triangulation: {n_pairs} pairs -> {cs_out.relative_to(REPO)}")
+
+    # MainBankCandidate (v1.1): emit candidacy edges from major-shareholder bank holdings.
+    import subprocess
+    res = subprocess.run([sys.executable, str(REPO / "scripts" / "materialize_main_bank_candidates.py")],
+                          capture_output=True, text=True, check=False)
+    print(res.stdout.rstrip())
+    if res.returncode != 0:
+        print(res.stderr, file=sys.stderr)
+
     return 0
 
 

@@ -14,10 +14,12 @@ jfibo:EDINETDisclosureDocument a owl:Class ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy jfibo: ;
     rdfs:subClassOf prov:Entity ;
-    skos:definition "A disclosure document submitted through EDINET and used as evidence for J-FIBO disclosure claims."@en ;
+    skos:definition "A disclosure document submitted through EDINET and used as evidence for J-FIBO disclosure claims."@en,
+        "EDINETを通じて提出された開示書類で、J-FIBOの開示主張のエビデンスとして使用される。"@ja ;
     skos:prefLabel "EDINET disclosure document"@en,
         "EDINET開示書類"@ja ;
-    skos:scopeNote "Represents the document as an evidence object; document type, filer, and taxonomy facts should be modeled separately."@en ;
+    skos:scopeNote "Represents the document as an evidence object; document type, filer, and taxonomy facts should be modeled separately."@en,
+        "文書をエビデンスオブジェクトとして表現する。書類種別・提出者・タクソノミ要素ファクトは別途モデル化すること。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -27,7 +29,8 @@ jfibo:GodoKaisha a owl:Class ;
     dcterms:source <https://www.japaneselawtranslation.go.jp/en/laws/view/3206> ;
     rdfs:isDefinedBy jfibo: ;
     rdfs:subClassOf cmns-org:FormalOrganization ;
-    skos:definition "Japanese limited liability company under the Companies Act of Japan, modeled as a formal organization with member equity interests."@en ;
+    skos:definition "Japanese limited liability company under the Companies Act of Japan, modeled as a formal organization with member equity interests."@en,
+        "会社法上の合同会社。社員の出資により構成される持分会社の一形態として、J-FIBOでは正式組織としてモデル化される。"@ja ;
     skos:prefLabel "godo kaisha"@en,
         "合同会社"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
@@ -39,7 +42,8 @@ jfibo:JapaneseListedShare a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy jfibo: ;
     rdfs:subClassOf fibo-sec-eq-eq:ListedShare ;
-    skos:definition "A listed share of an issuer whose disclosure is represented in Japanese securities reporting data."@en ;
+    skos:definition "A listed share of an issuer whose disclosure is represented in Japanese securities reporting data."@en,
+        "日本の金融商品取引所に上場している株式を表すJ-FIBOクラス。FIBOのListedShareをJP市場文脈で特化したもの。"@ja ;
     skos:prefLabel "Japanese listed share"@en,
         "日本上場株式"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
@@ -51,7 +55,8 @@ jfibo:KabushikiKaisha a owl:Class ;
     dcterms:source <https://www.japaneselawtranslation.go.jp/en/laws/view/3206> ;
     rdfs:isDefinedBy jfibo: ;
     rdfs:subClassOf fibo-be-le-cb:Corporation ;
-    skos:definition "Japanese stock company under the Companies Act of Japan, modeled as a corporation whose ownership interests are divided into shares."@en ;
+    skos:definition "Japanese stock company under the Companies Act of Japan, modeled as a corporation whose ownership interests are divided into shares."@en,
+        "会社法上の株式会社。株式を発行する社員（株主）により構成される営利法人として、J-FIBOでは正式組織としてモデル化される。"@ja ;
     skos:prefLabel "kabushiki kaisha"@en,
         "株式会社"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
@@ -63,7 +68,8 @@ jfibo:SougouShousha a owl:Class ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy jfibo: ;
     rdfs:subClassOf fibo-be-le-cb:Corporation ;
-    skos:definition "Japanese general-trading-company corporate type with diversified trading, investment, and project-finance activities."@en ;
+    skos:definition "Japanese general-trading-company corporate type with diversified trading, investment, and project-finance activities."@en,
+        "総合商社。多種の商品・サービスの貿易・投資・事業開発を行う総合的な商社をJ-FIBO上の組織サブクラスとして表現したもの。"@ja ;
     skos:prefLabel "sougou shousha (general trading company)"@en,
         "総合商社"@ja ;
     skos:scopeNote "Use only when the entity's primary self-identification is sougou shousha; this is a customary classification, not a statutory legal form."@en ;

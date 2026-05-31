@@ -65,7 +65,8 @@ jfibo:JapaneseYen a owl:NamedIndividual ;
 jfibo:hasLEI a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
     rdfs:label "Legal Entity Identifier (ISO 17442)"@en ;
-    skos:definition "ISO 17442 Legal Entity Identifier (LEI) string for a legal entity. 20 alphanumeric characters."@en ;
+    skos:definition "ISO 17442 Legal Entity Identifier (LEI) string for a legal entity. 20 alphanumeric characters."@en,
+        "ISO 17442に基づく法人識別子（LEI）文字列。20桁の英数字。"@ja ;
     dcterms:source <https://www.iso.org/standard/78829.html>, <https://www.gleif.org/> ;
     rdfs:range xsd:string ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
@@ -74,7 +75,8 @@ jfibo:hasLEI a owl:DatatypeProperty ;
 jfibo:linkedToLEIRecord a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
     rdfs:label "linked to GLEIF LEI record"@en ;
-    skos:definition "Links a J-FIBO legal entity to its GLEIF LEI L1 record."@en ;
+    skos:definition "Links a J-FIBO legal entity to its GLEIF LEI L1 record."@en,
+        "J-FIBOの法人をGLEIF LEI L1レコードと関連付ける。"@ja ;
     rdfs:range gleif-L1:LegalEntity ;
     dcterms:source <https://www.gleif.org/ontology/L1/> ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
@@ -85,7 +87,8 @@ jfibo:linkedToLEIRecord a owl:ObjectProperty ;
 jfibo:hasHojinBango a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
     rdfs:label "法人番号 (corporate number)"@en, "法人番号"@ja ;
-    skos:definition "13-digit corporate number issued by Japan's National Tax Agency, mandatory for every registered Japanese corporation."@en ;
+    skos:definition "13-digit corporate number issued by Japan's National Tax Agency, mandatory for every registered Japanese corporation."@en,
+        "国税庁が交付する13桁の法人番号。日本に登記された全ての法人に交付される。"@ja ;
     dcterms:source <https://www.houjin-bangou.nta.go.jp/>, <https://www.gleif.org/en/lei-data/lei-mapping/gleif-national-tax-agency-of-japan-mapping> ;
     rdfs:range xsd:string ;
     skos:scopeNote "Consumers that hold a GLEIF–NTA mapping SHOULD also attach the corresponding LEI via jfibo:hasLEI to enable global identity linking."@en ;
@@ -97,7 +100,8 @@ jfibo:hasHojinBango a owl:DatatypeProperty ;
 jfibo:hasEDINETCode a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
     rdfs:label "EDINET code"@en, "EDINETコード"@ja ;
-    skos:definition "FSA-issued EDINET filer code, used as the primary disclosure-side identifier on EDINET."@en ;
+    skos:definition "FSA-issued EDINET filer code, used as the primary disclosure-side identifier on EDINET."@en,
+        "金融庁が交付するEDINET提出者コード。EDINET上の開示主体の主要な識別子として使用される。"@ja ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:range xsd:string ;
     skos:scopeNote "EDINET code is the disclosure-system identifier; 法人番号 is the corporate-registry identifier; LEI is the global-finance identifier. The three SHOULD all be attached to a Japanese listed-company entity when known."@en ;
