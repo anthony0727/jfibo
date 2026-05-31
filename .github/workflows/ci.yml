@@ -1,0 +1,66 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install 3.13
+
+      - name: Sync deps
+        run: uv sync --frozen
+
+      - name: Build ontology
+        run: uv run python scripts/build_ontology.py
+
+      - name: pytest (ontology + SHACL + benchmark + strict targets)
+        run: uv run python -m pytest -q
+
+      - name: Coverage report (drift check)
+        run: uv run python scripts/count_coverage.py
+
+      - name: SHACL — valid examples must pass
+        run: |
+          for f in examples/*-valid.ttl; do
+            echo "--- validating $f ---"
+            uv run python scripts/validate.py "$f"
+          done
+
+      - name: SHACL — invalid examples must fail
+        run: |
+          set +e
+          fail=0
+          for f in examples/*-invalid.ttl; do
+            echo "--- validating $f (expect failure) ---"
+            uv run python scripts/validate.py "$f"
+            rc=$?
+            if [ $rc -eq 0 ]; then
+              echo "ERROR: $f passed but was expected to fail"
+              fail=1
+            fi
+          done
+          exit $fail
+
+      - name: OWL profile check (informational)
+        continue-on-error: true
+        run: |
+          uv run python -c "
+          from rdflib import Graph
+          g = Graph()
+          for f in __import__('pathlib').Path('ontology').glob('jfibo-*.ttl'):
+              g.parse(f)
+          print(f'parsed {len(g)} triples across {len(list(__import__(\"pathlib\").Path(\"ontology\").glob(\"jfibo-*.ttl\")))} modules')
+          "

@@ -728,7 +728,7 @@ jfibo:Counterfactual a owl:NamedIndividual,
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
-    jfibo:status "proposed" .
+    jfibo:status "experimental-consumer-only" .
 
 jfibo:CrossShareholdingClaim a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
@@ -897,7 +897,7 @@ jfibo:InformationBoundary a owl:Class ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
-    jfibo:status "proposed" .
+    jfibo:status "experimental-consumer-only" .
 
 jfibo:InformationSet a owl:Class ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
@@ -951,6 +951,16 @@ jfibo:JPXListingRules a owl:NamedIndividual,
     jfibo:level "propose" ;
     jfibo:status "proposed" .
 
+jfibo:Japan a owl:NamedIndividual ;
+    dcterms:source <https://www.iso.org/obp/ui/#iso:code:3166:JP> ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    skos:exactMatch <https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/JP> ;
+    skos:notation "JP" ;
+    skos:prefLabel "Japan"@en,
+        "日本"@ja ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
 jfibo:JapanCGCode a owl:NamedIndividual,
         jfibo:ReportingRegime ;
     dcterms:source <https://www.jpx.co.jp/english/equities/listing/cg/index.html> ;
@@ -964,6 +974,16 @@ jfibo:JapanCGCode a owl:NamedIndividual,
     jfibo:level "propose" ;
     jfibo:status "proposed" .
 
+jfibo:JapaneseLanguage a owl:NamedIndividual ;
+    dcterms:source <https://www.iso.org/iso-639-language-code> ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    skos:exactMatch <https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/ja> ;
+    skos:notation "ja" ;
+    skos:prefLabel "Japanese (ja)"@en,
+        "日本語"@ja ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
 jfibo:JapaneseListedShare a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy jfibo: ;
@@ -975,6 +995,15 @@ jfibo:JapaneseListedShare a owl:Class ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "align" ;
     jfibo:status "proposed" .
+
+jfibo:JapaneseYen a owl:NamedIndividual ;
+    dcterms:source <https://www.iso.org/iso-4217-currency-codes.html> ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    skos:notation "JPY" ;
+    skos:prefLabel "Japanese yen"@en,
+        "日本円"@ja ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
 
 jfibo:KabushikiKaisha a owl:Class ;
     dcterms:source <https://www.japaneselawtranslation.go.jp/en/laws/view/3206> ;
@@ -1052,7 +1081,7 @@ jfibo:OutsideInformationBoundary a owl:NamedIndividual,
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
-    jfibo:status "proposed" .
+    jfibo:status "experimental-consumer-only" .
 
 jfibo:PolicyShareholding a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html>,
@@ -1082,7 +1111,7 @@ jfibo:Predicted a owl:NamedIndividual,
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
-    jfibo:status "proposed" .
+    jfibo:status "experimental-consumer-only" .
 
 jfibo:QuarterlySecuritiesReport a owl:NamedIndividual,
         jfibo:DocumentType ;
@@ -1244,6 +1273,17 @@ jfibo:hasClosingBalance a owl:DatatypeProperty ;
     jfibo:level "propose" ;
     jfibo:status "proposed" .
 
+jfibo:hasEDINETCode a owl:DatatypeProperty ;
+    rdfs:label "EDINET code"@en,
+        "EDINETコード"@ja ;
+    dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    rdfs:range xsd:string ;
+    skos:definition "FSA-issued EDINET filer code, used as the primary disclosure-side identifier on EDINET."@en ;
+    skos:scopeNote "EDINET code is the disclosure-system identifier; 法人番号 is the corporate-registry identifier; LEI is the global-finance identifier. The three SHOULD all be attached to a Japanese listed-company entity when known."@en ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
 jfibo:hasEvidenceElement a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/edinet-alignment/> ;
@@ -1256,6 +1296,18 @@ jfibo:hasEvidenceElement a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
     jfibo:status "proposed" .
+
+jfibo:hasHojinBango a owl:DatatypeProperty ;
+    rdfs:label "法人番号 (corporate number)"@en,
+        "法人番号"@ja ;
+    dcterms:source <https://www.gleif.org/en/lei-data/lei-mapping/gleif-national-tax-agency-of-japan-mapping>,
+        <https://www.houjin-bangou.nta.go.jp/> ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    rdfs:range xsd:string ;
+    skos:definition "13-digit corporate number issued by Japan's National Tax Agency, mandatory for every registered Japanese corporation."@en ;
+    skos:scopeNote "Consumers that hold a GLEIF–NTA mapping SHOULD also attach the corresponding LEI via jfibo:hasLEI to enable global identity linking."@en ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
 
 jfibo:hasHolder a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
@@ -1311,6 +1363,16 @@ jfibo:hasIssuer a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
     jfibo:status "proposed" .
+
+jfibo:hasLEI a owl:DatatypeProperty ;
+    rdfs:label "Legal Entity Identifier (ISO 17442)"@en ;
+    dcterms:source <https://www.gleif.org/>,
+        <https://www.iso.org/standard/78829.html> ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    rdfs:range xsd:string ;
+    skos:definition "ISO 17442 Legal Entity Identifier (LEI) string for a legal entity. 20 alphanumeric characters."@en ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
 
 jfibo:hasLender a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
@@ -1447,6 +1509,15 @@ jfibo:informationStatus a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
     jfibo:status "proposed" .
+
+jfibo:linkedToLEIRecord a owl:ObjectProperty ;
+    rdfs:label "linked to GLEIF LEI record"@en ;
+    dcterms:source <https://www.gleif.org/ontology/L1/> ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    rdfs:range <https://www.gleif.org/ontology/L1/LegalEntity> ;
+    skos:definition "Links a J-FIBO legal entity to its GLEIF LEI L1 record."@en ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
 
 jfibo:mapsToEdinetElement a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
@@ -1751,6 +1822,14 @@ jfibo:ReportingRegime a owl:Class ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
     jfibo:status "proposed" .
+
+<https://w3id.org/jfibo/ontology/JP/external-alignment/> a owl:Ontology ;
+    dcterms:issued "2026-06-01"^^xsd:date ;
+    dcterms:source <https://www.gleif.org/en/about-lei/code-lists/iso-17442-the-lei-code-structure>,
+        <https://www.omg.org/spec/LCC/> ;
+    dcterms:title "J-FIBO external alignment (LCC, GLEIF)"@en ;
+    rdfs:comment "Anchors J-FIBO into the global identifier / code-list infrastructure used by FIBO and GLEIF."@en ;
+    owl:versionIRI <https://w3id.org/jfibo/ontology/JP/external-alignment/1.0.0/> .
 
 <https://w3id.org/jfibo/ontology/JP/normative-status/> a owl:Ontology ;
     rdfs:label "J-FIBO Normative Status"@en,
