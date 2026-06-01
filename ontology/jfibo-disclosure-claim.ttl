@@ -7,11 +7,29 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+jfibo:BorrowingsClaim a owl:Class ;
+    dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
+    rdfs:subClassOf jfibo:DisclosureClaim ;
+    skos:definition "A disclosed borrowing from a named lender, with balance, weighted-average rate, and repayment period."@en,
+        "借入金主張。借入金等明細表をエビデンスとする、企業の借入残高に関する開示主張。"@ja ;
+    skos:prefLabel "borrowings claim"@en,
+        "借入金主張"@ja ;
+    skos:scopeNote "Use the borrowings schedule (借入金等明細表) as evidence; lender role should be tagged when distinct from a vanilla bank-corporate loan."@en,
+        "貸し手の役割は、通常の銀行・企業ローンと異なる場合に明示的にタグ付けすること。"@ja ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
+    jfibo:level "propose" ;
+    jfibo:mapsToEdinetElement jpcrp_cor:AnnexedConsolidatedDetailedScheduleOfBorrowingsTextBlock,
+        jpcrp_cor:AnnexedDetailedScheduleOfBorrowingsFinancialStatementsTextBlock ;
+    jfibo:status "proposed" .
+
 jfibo:CommercialPaperClaim a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subClassOf jfibo:DisclosureClaim ;
-    skos:definition "A disclosure claim about commercial-paper issuance, typically the parenthetical schedule appended to the borrowings table for banks and other treasury-active filers. One claim per row (issuance program or period)."@en ;
+    skos:definition "A disclosure claim about commercial-paper issuance, typically the parenthetical schedule appended to the borrowings table for banks and other treasury-active filers. One claim per row (issuance program or period)."@en,
+        "コマーシャル・ペーパー主張。短期社債（CP）の発行残高および条件に関する開示主張。"@ja ;
     skos:prefLabel "commercial paper claim"@en,
         "コマーシャル・ペーパー残高開示"@ja ;
     skos:scopeNote "For banks, CP issuance is reported alongside but separately from 借入金等明細表; we model it as its own atomic claim so totals are not double-counted."@en ;
@@ -25,10 +43,12 @@ jfibo:EvidenceItem a owl:Class ;
         <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subClassOf prov:Entity ;
-    skos:definition "A cited source fragment, taxonomy fact, table row, text block, or document section used to support a disclosure claim."@en ;
+    skos:definition "A cited source fragment, taxonomy fact, table row, text block, or document section used to support a disclosure claim."@en,
+        "エビデンス項目。引用されたソースフラグメント・タクソノミファクト・表の行・テキストブロック・書類セクション等、開示主張を裏付ける単位。"@ja ;
     skos:prefLabel "evidence item"@en,
         "証拠項目"@ja ;
-    skos:scopeNote "Evidence items should retain the EDINET element name or source locator whenever available."@en ;
+    skos:scopeNote "Evidence items should retain the EDINET element name or source locator whenever available."@en,
+        "可能な限りEDINET要素名またはソースロケータを保持すること。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -39,10 +59,12 @@ jfibo:PolicyShareholding a owl:Class ;
         <https://www.jpx.co.jp/english/equities/listing/cg/index.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subClassOf jfibo:DisclosureClaim ;
-    skos:definition "A disclosed shareholding held for purposes other than pure investment, represented as an evidence-backed disclosure claim rather than as a bare ownership edge."@en ;
+    skos:definition "A disclosed shareholding held for purposes other than pure investment, represented as an evidence-backed disclosure claim rather than as a bare ownership edge."@en,
+        "政策保有株式。純投資以外の目的で保有する開示済株式を、所有エッジではなくエビデンス付き開示主張として表現する。"@ja ;
     skos:prefLabel "policy shareholding"@en,
         "政策保有株式"@ja ;
-    skos:scopeNote "Aligns to EDINET elements for specified investment shares held for purposes other than pure investment; use jfibo:hasHoldingPurpose and cited evidence."@en ;
+    skos:scopeNote "Aligns to EDINET elements for specified investment shares held for purposes other than pure investment; use jfibo:hasHoldingPurpose and cited evidence."@en,
+        "純投資以外の目的で保有する特定投資株式に関するEDINET要素にアライン。jfibo:hasHoldingPurposeおよび引用エビデンスを併用する。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -55,7 +77,8 @@ jfibo:hasAverageRate a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdf:value ;
-    skos:definition "Weighted-average interest rate (平均利率) for a borrowings or commercial-paper class, expressed as a percentage literal."@en ;
+    skos:definition "Weighted-average interest rate (平均利率) for a borrowings or commercial-paper class, expressed as a percentage literal."@en,
+        "平均利率を表す数値プロパティ。"@ja ;
     skos:prefLabel "average interest rate"@en,
         "平均利率"@ja ;
     skos:scopeNote "Percentage as disclosed; consumers must not multiply by 0.01 without checking the disclosure unit."@en ;
@@ -66,13 +89,14 @@ jfibo:hasAverageRate a owl:DatatypeProperty ;
 
 jfibo:hasBorrower a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
-    rdfs:domain jfibo:BorrowingsClaim ;
+    rdfs:domain jfibo:DisclosureClaim ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf dcterms:subject ;
-    skos:definition "Relates a borrowings claim to the borrower entity (typically the reporting company)."@en ;
+    skos:definition "Relates a disclosure claim to the borrower entity (typically the reporting company)."@en,
+        "開示主張を借り手主体（通常は報告会社）と関連付けるプロパティ。"@ja ;
     skos:prefLabel "has borrower"@en,
         "借入元"@ja ;
-    skos:scopeNote "Use only on borrowings claims; the borrower is typically the EDINET reporting company."@en ;
+    skos:scopeNote "Used on BorrowingsClaim (disclosed) and other lender/borrower-shaped claims."@en ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -82,7 +106,8 @@ jfibo:hasBorrowingsClassLabel a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdfs:label ;
-    skos:definition "Verbatim 区分 label as it appears in 借入金等明細表 (e.g. 借入金, リース債務, 借用金, 再割引手形, コマーシャル・ペーパー)."@en ;
+    skos:definition "Verbatim 区分 label as it appears in 借入金等明細表 (e.g. 借入金, リース債務, 借用金, 再割引手形, コマーシャル・ペーパー)."@en,
+        "借入金の種類（短期・長期・社債等）を表すラベルプロパティ。"@ja ;
     skos:prefLabel "borrowings class label"@en,
         "借入金区分ラベル"@ja ;
     skos:scopeNote "Use to keep BorrowingsClaim rows joinable back to the verbatim 区分 cell."@en ;
@@ -95,7 +120,8 @@ jfibo:hasCarryingAmount a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdf:value ;
-    skos:definition "Reported balance-sheet carrying amount for a disclosed shareholding or related evidence item."@en ;
+    skos:definition "Reported balance-sheet carrying amount for a disclosed shareholding or related evidence item."@en,
+        "保有または借入の帳簿価額を表す数値プロパティ。"@ja ;
     skos:prefLabel "has carrying amount"@en,
         "貸借対照表計上額"@ja ;
     skos:scopeNote "Currency/unit and reporting date must be carried in the evidence or observation context."@en ;
@@ -109,7 +135,8 @@ jfibo:hasClosingBalance a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdf:value ;
-    skos:definition "Balance at the end of the period (当期末残高), expressed as a literal number whose unit is captured at the claim level."@en ;
+    skos:definition "Balance at the end of the period (当期末残高), expressed as a literal number whose unit is captured at the claim level."@en,
+        "期末残高を表す数値プロパティ。"@ja ;
     skos:prefLabel "closing balance"@en,
         "期末残高"@ja ;
     skos:scopeNote "Pair with hasUnitLabel; do not auto-convert units."@en ;
@@ -123,7 +150,8 @@ jfibo:hasHolder a owl:ObjectProperty ;
     rdfs:domain jfibo:MajorShareholderClaim ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf prov:wasAttributedTo ;
-    skos:definition "Relates a major-shareholder claim to the entity (or natural person) named in the registered-holder column."@en ;
+    skos:definition "Relates a major-shareholder claim to the entity (or natural person) named in the registered-holder column."@en,
+        "主張をその保有者と関連付けるプロパティ。"@ja ;
     skos:prefLabel "has registered holder"@en,
         "名義株主"@ja ;
     skos:scopeNote "This is the registered holder, not necessarily the beneficial owner; pair with hasHolderRole."@en ;
@@ -136,7 +164,8 @@ jfibo:hasHoldingPurpose a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf skos:note ;
-    skos:definition "Textual disclosed purpose of holding a share, especially for shares held for purposes other than pure investment."@en ;
+    skos:definition "Textual disclosed purpose of holding a share, especially for shares held for purposes other than pure investment."@en,
+        "政策保有株式の保有目的を関連付けるプロパティ。"@ja ;
     skos:prefLabel "has holding purpose"@en,
         "保有目的"@ja ;
     skos:scopeNote "Preserve source wording; later controlled purpose taxonomies may be aligned separately."@en ;
@@ -151,7 +180,8 @@ jfibo:hasInvestor a owl:ObjectProperty ;
     rdfs:domain jfibo:DisclosureClaim ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf prov:wasAttributedTo ;
-    skos:definition "Relates a shareholding claim to the entity reported or inferred to hold the shares."@en ;
+    skos:definition "Relates a shareholding claim to the entity reported or inferred to hold the shares."@en,
+        "保有関係における投資家側を関連付けるプロパティ。"@ja ;
     skos:prefLabel "has investor"@en,
         "投資者"@ja ;
     skos:scopeNote "Use only on claims/evidence, not as a direct timeless ownership fact."@en ;
@@ -164,7 +194,8 @@ jfibo:hasIssuer a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf dcterms:subject ;
-    skos:definition "Relates a shareholding claim to the issuer of the held shares."@en ;
+    skos:definition "Relates a shareholding claim to the issuer of the held shares."@en,
+        "保有関係における発行体側を関連付けるプロパティ。"@ja ;
     skos:prefLabel "has issuer"@en,
         "発行者"@ja ;
     skos:scopeNote "Use with a cited security name, EDINET code, security code, or entity resolver output."@en ;
@@ -175,13 +206,14 @@ jfibo:hasIssuer a owl:ObjectProperty ;
 
 jfibo:hasLender a owl:ObjectProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
-    rdfs:domain jfibo:BorrowingsClaim ;
+    rdfs:domain jfibo:DisclosureClaim ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf prov:wasAttributedTo ;
-    skos:definition "Relates a borrowings claim to the lender entity."@en ;
+    skos:definition "Relates a disclosure claim to the lender entity. Used on BorrowingsClaim (disclosed lender) and MainBankCandidate (hypothesized main bank)."@en,
+        "開示主張を貸し手と関連付けるプロパティ。BorrowingsClaim（開示された貸し手）およびMainBankCandidate（仮説的なメインバンク）で使用する。"@ja ;
     skos:prefLabel "has lender"@en,
         "貸出元"@ja ;
-    skos:scopeNote "Use only on borrowings claims; pair with an entity resolver output for the lender."@en ;
+    skos:scopeNote "Pair with an entity resolver output for the lender. For MainBankCandidate, the relationship is hypothesized; for BorrowingsClaim, disclosed."@en ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -191,7 +223,8 @@ jfibo:hasOpeningBalance a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdf:value ;
-    skos:definition "Balance at the start of the period (当期首残高), expressed as a literal number whose unit is captured at the claim level."@en ;
+    skos:definition "Balance at the start of the period (当期首残高), expressed as a literal number whose unit is captured at the claim level."@en,
+        "期首残高を表す数値プロパティ。"@ja ;
     skos:prefLabel "opening balance"@en,
         "期首残高"@ja ;
     skos:scopeNote "Pair with hasUnitLabel; do not auto-convert units."@en ;
@@ -204,7 +237,8 @@ jfibo:hasOwnershipPercentage a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdf:value ;
-    skos:definition "Reported percentage of issued shares represented by a holder's position."@en ;
+    skos:definition "Reported percentage of issued shares represented by a holder's position."@en,
+        "発行済株式総数に対する保有割合（%）を表す数値プロパティ。"@ja ;
     skos:prefLabel "has ownership percentage"@en,
         "所有株式数の割合"@ja ;
     skos:scopeNote "Decimal value; the basis (issued shares excluding/including treasury) should be carried in the evidence context."@en ;
@@ -217,7 +251,8 @@ jfibo:hasRepaymentDeadline a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdf:value ;
-    skos:definition "Stated repayment-deadline range (返済期限) as a verbatim disclosure literal; structured parsing is intentionally not enforced because the disclosure is often a free-form range."@en ;
+    skos:definition "Stated repayment-deadline range (返済期限) as a verbatim disclosure literal; structured parsing is intentionally not enforced because the disclosure is often a free-form range."@en,
+        "返済期限を表す日付プロパティ。"@ja ;
     skos:prefLabel "repayment deadline"@en,
         "返済期限"@ja ;
     skos:scopeNote "Often a Japanese-month-range string such as '2024年 1月〜2051年 10月'; intentionally preserved verbatim."@en ;
@@ -230,7 +265,8 @@ jfibo:hasShareCount a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdf:value ;
-    skos:definition "Reported number of shares in a disclosed shareholding claim."@en ;
+    skos:definition "Reported number of shares in a disclosed shareholding claim."@en,
+        "保有株数を表す数値プロパティ。"@ja ;
     skos:prefLabel "has share count"@en,
         "株式数"@ja ;
     skos:scopeNote "Unit should be shares; reported thresholds and omissions are modeled as evidence status, not guessed values."@en ;
@@ -244,7 +280,8 @@ jfibo:hasShareholderRank a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdf:value ;
-    skos:definition "1-based rank in the 大株主の状況 ordered list."@en ;
+    skos:definition "1-based rank in the 大株主の状況 ordered list."@en,
+        "大株主一覧における順位を表す数値プロパティ。"@ja ;
     skos:prefLabel "has shareholder rank"@en,
         "大株主順位"@ja ;
     skos:scopeNote "When ties exist, use the order given in the table; do not invent ranks."@en ;
@@ -257,7 +294,8 @@ jfibo:hasUnitLabel a owl:DatatypeProperty ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subPropertyOf rdfs:label ;
-    skos:definition "Verbatim unit label as disclosed (e.g. 百万円, ％), preserved without unit conversion so the claim remains auditable against the source row."@en ;
+    skos:definition "Verbatim unit label as disclosed (e.g. 百万円, ％), preserved without unit conversion so the claim remains auditable against the source row."@en,
+        "金額単位（百万円・千円等）を表すラベルプロパティ。"@ja ;
     skos:prefLabel "has unit label"@en,
         "単位ラベル"@ja ;
     skos:scopeNote "Examples: 百万円, 千円, ％. Stored as a label so claims remain auditable against the source row without silent unit conversion."@en ;
@@ -270,29 +308,16 @@ jfibo:MajorShareholderClaim a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subClassOf jfibo:DisclosureClaim ;
-    skos:definition "A disclosed ranked entry in a 大株主の状況 table, recording a registered holder, address, shareholding count, ownership percentage, and rank."@en ;
+    skos:definition "A disclosed ranked entry in a 大株主の状況 table, recording a registered holder, address, shareholding count, ownership percentage, and rank."@en,
+        "大株主主張。有価証券報告書または大量保有報告書から得られる、上位株主の名称・株数・保有比率に関する開示主張。"@ja ;
     skos:prefLabel "major shareholder claim"@en,
         "大株主主張"@ja ;
-    skos:scopeNote "Always pair with a HolderRole; registered-holder rows from trust banks must not be conflated with beneficial ownership."@en ;
+    skos:scopeNote "Always pair with a HolderRole; registered-holder rows from trust banks must not be conflated with beneficial ownership."@en,
+        "常にHolderRoleと併用する。信託銀行からの名義保有者行を実質保有と混同してはならない。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
     jfibo:mapsToEdinetElement jpcrp_cor:MajorShareholdersTextBlock ;
-    jfibo:status "proposed" .
-
-jfibo:BorrowingsClaim a owl:Class ;
-    dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
-    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
-    rdfs:subClassOf jfibo:DisclosureClaim ;
-    skos:definition "A disclosed borrowing from a named lender, with balance, weighted-average rate, and repayment period."@en ;
-    skos:prefLabel "borrowings claim"@en,
-        "借入金主張"@ja ;
-    skos:scopeNote "Use the borrowings schedule (借入金等明細表) as evidence; lender role should be tagged when distinct from a vanilla bank-corporate loan."@en ;
-    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
-    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
-    jfibo:level "propose" ;
-    jfibo:mapsToEdinetElement jpcrp_cor:AnnexedConsolidatedDetailedScheduleOfBorrowingsTextBlock,
-        jpcrp_cor:AnnexedDetailedScheduleOfBorrowingsFinancialStatementsTextBlock ;
     jfibo:status "proposed" .
 
 jfibo:DisclosureClaim a owl:Class ;
@@ -300,10 +325,12 @@ jfibo:DisclosureClaim a owl:Class ;
         <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/disclosure-claim/> ;
     rdfs:subClassOf prov:Entity ;
-    skos:definition "An auditable claim extracted from, or inferred from, a disclosure document with source, time, validity, information status, and (optionally) normative status."@en ;
+    skos:definition "An auditable claim extracted from, or inferred from, a disclosure document with source, time, validity, information status, and (optionally) normative status."@en,
+        "開示主張。情報源・時点・有効性・情報ステータス・規範ステータス（任意）を伴う、開示書類から抽出または推論された監査可能な主張。"@ja ;
     skos:prefLabel "disclosure claim"@en,
         "開示主張"@ja ;
-    skos:scopeNote "Atomic; use subclasses for specific claim shapes (PolicyShareholding, MajorShareholderClaim, BorrowingsClaim, MainBankCandidate, CrossShareholdingClaim)."@en ;
+    skos:scopeNote "Atomic; use subclasses for specific claim shapes (PolicyShareholding, MajorShareholderClaim, BorrowingsClaim, MainBankCandidate, CrossShareholdingClaim)."@en,
+        "原子的（atomic）。具体的な主張形状にはサブクラスを使用すること（PolicyShareholding, MajorShareholderClaim, BorrowingsClaim, MainBankCandidate, CrossShareholdingClaim）。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;

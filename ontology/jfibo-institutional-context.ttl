@@ -9,10 +9,12 @@ jfibo:CrossShareholdingClaim a owl:Class ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/institutional-context/> ;
     rdfs:subClassOf jfibo:DisclosureClaim ;
-    skos:definition "An evidence-backed claim that two entities each hold shares or economically meaningful ownership interests in the other."@en ;
+    skos:definition "An evidence-backed claim that two entities each hold shares or economically meaningful ownership interests in the other."@en,
+        "相互保有主張。二つの主体が相互に株式または経済的に意味のある所有権を保有していることのエビデンス付き主張。"@ja ;
     skos:prefLabel "cross-shareholding claim"@en,
         "相互保有主張"@ja ;
-    skos:scopeNote "Requires two separately evidenced holding claims (PolicyShareholding or MajorShareholderClaim); do not infer stable alliance, control, or future support solely from mutual holdings."@en ;
+    skos:scopeNote "Requires two separately evidenced holding claims (PolicyShareholding or MajorShareholderClaim); do not infer stable alliance, control, or future support solely from mutual holdings."@en,
+        "二つの別個に立証された保有主張（PolicyShareholdingまたはMajorShareholderClaim）を必要とする。相互保有のみから安定的提携・支配・将来支援を推論してはならない。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -22,10 +24,12 @@ jfibo:InstitutionalRelationshipHypothesis a owl:Class ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/institutional-context/> ;
     rdfs:subClassOf jfibo:DisclosureClaim ;
-    skos:definition "A hypothesis about a Japanese institutional finance relationship, represented separately from disclosed legal, accounting, or ownership facts."@en ;
+    skos:definition "A hypothesis about a Japanese institutional finance relationship, represented separately from disclosed legal, accounting, or ownership facts."@en,
+        "制度的関係仮説。系列・業務提携・資本提携等、開示エビデンスを超えた制度的関係に関する仮説的主張の親概念。"@ja ;
     skos:prefLabel "institutional relationship hypothesis"@en,
         "制度的関係仮説"@ja ;
-    skos:scopeNote "Keep this outside factual disclosure unless evidence thresholds and information status explicitly justify an inferred claim."@en ;
+    skos:scopeNote "Keep this outside factual disclosure unless evidence thresholds and information status explicitly justify an inferred claim."@en,
+        "エビデンス閾値および情報ステータスが推論された主張を正当化する場合を除き、事実的開示の外に置くこと。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
@@ -36,10 +40,12 @@ jfibo:MainBankCandidate a owl:Class ;
         <https://www.nber.org/papers/w23715> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/institutional-context/> ;
     rdfs:subClassOf jfibo:DisclosureClaim ;
-    skos:definition "An evidence-backed hypothesis that a bank may function as a primary lender, monitor, or distress-coordination counterparty for an entity."@en ;
+    skos:definition "An evidence-backed hypothesis that a bank may function as a primary lender, monitor, or distress-coordination counterparty for an entity."@en,
+        "メインバンク候補。ある銀行がある主体の主要貸し手・モニタリング主体・経営悪化時の調整カウンターパーティとして機能する可能性に関するエビデンス付き仮説。"@ja ;
     skos:prefLabel "main-bank candidate"@en,
         "メインバンク候補"@ja ;
-    skos:scopeNote "Not a contractual relation and not a future support guarantee; instantiate only from disclosed borrowing, shareholding, persistence, or explicit narrative evidence."@en ;
+    skos:scopeNote "Not a contractual relation and not a future support guarantee; instantiate only from disclosed borrowing, shareholding, persistence, or explicit narrative evidence."@en,
+        "契約関係ではなく、将来の支援保証でもない。開示された借入・株式保有・継続性・明示的なナラティブエビデンスからのみインスタンス化する。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;

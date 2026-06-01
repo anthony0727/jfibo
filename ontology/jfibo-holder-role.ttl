@@ -9,7 +9,8 @@ jfibo:ADRDepositary a owl:NamedIndividual,
         jfibo:HolderRole ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
-    skos:definition "A depositary bank holding shares as the underlying for an American Depositary Receipt program."@en ;
+    skos:definition "A depositary bank holding shares as the underlying for an American Depositary Receipt program."@en,
+        "ADR（米国預託証券）の発行に伴い原株を保有する預託銀行。"@ja ;
     skos:prefLabel "ADR depositary"@en,
         "ＡＤＲ預託機関"@ja ;
     skos:scopeNote "Typical example: The Bank of New York Mellon as depositary; the disclosed holder is the depositary, not the ADR holders."@en ;
@@ -22,7 +23,8 @@ jfibo:BeneficialHolder a owl:NamedIndividual,
         jfibo:HolderRole ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
-    skos:definition "The ultimate beneficial owner of the shares."@en ;
+    skos:definition "The ultimate beneficial owner of the shares."@en,
+        "株式の経済的利益を実際に享受する保有者。"@ja ;
     skos:prefLabel "beneficial holder"@en,
         "実質株主"@ja ;
     skos:scopeNote "Often inferred rather than directly disclosed; pair with informationStatus = EvidenceBackedInferred unless disclosed via large-shareholding report."@en ;
@@ -35,7 +37,8 @@ jfibo:CustodyBank a owl:NamedIndividual,
         jfibo:HolderRole ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
-    skos:definition "A custodian bank holding shares on behalf of foreign or institutional investors."@en ;
+    skos:definition "A custodian bank holding shares on behalf of foreign or institutional investors."@en,
+        "カストディサービスを提供し、顧客のために株式を保管・名義人として保有する銀行。"@ja ;
     skos:prefLabel "custody bank"@en,
         "カストディ銀行"@ja ;
     skos:scopeNote "Custody banks should not be conflated with beneficial owners in cross-shareholding analyses."@en ;
@@ -48,7 +51,8 @@ jfibo:IndividualShareholder a owl:NamedIndividual,
         jfibo:HolderRole ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
-    skos:definition "A natural person holding shares in their own name."@en ;
+    skos:definition "A natural person holding shares in their own name."@en,
+        "個人株主。法人ではない自然人としての株式保有者。"@ja ;
     skos:prefLabel "individual shareholder"@en,
         "個人株主"@ja ;
     skos:scopeNote "Used for founder-shareholders, family-office holders, and other named individuals."@en ;
@@ -61,7 +65,8 @@ jfibo:RegisteredHolder a owl:NamedIndividual,
         jfibo:HolderRole ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
-    skos:definition "The holder of record in the shareholder registry, regardless of beneficial ownership."@en ;
+    skos:definition "The holder of record in the shareholder registry, regardless of beneficial ownership."@en,
+        "株主名簿上の名義人。実質保有者と必ずしも一致しない（信託銀行・カストディアン経由の保有が代表例）。"@ja ;
     skos:prefLabel "registered holder"@en,
         "名義株主"@ja ;
     skos:scopeNote "This is the role the MajorShareholders table primarily reports."@en ;
@@ -74,7 +79,8 @@ jfibo:StandingProxy a owl:NamedIndividual,
         jfibo:HolderRole ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
-    skos:definition "A Japanese bank or securities firm acting as the standing proxy for a non-Japanese registered holder."@en ;
+    skos:definition "A Japanese bank or securities firm acting as the standing proxy for a non-Japanese registered holder."@en,
+        "常任代理人。外国人投資家に代わって日本における権利行使等を行う代理人。"@ja ;
     skos:prefLabel "standing proxy"@en,
         "常任代理人"@ja ;
     skos:scopeNote "Common pattern: foreign custodian as the registered holder with a Japanese megabank as the standing proxy."@en ;
@@ -87,7 +93,8 @@ jfibo:Trustee a owl:NamedIndividual,
         jfibo:HolderRole ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
-    skos:definition "A trust bank holding shares in a trust account on behalf of one or more beneficial owners."@en ;
+    skos:definition "A trust bank holding shares in a trust account on behalf of one or more beneficial owners."@en,
+        "信託の受託者として株式を保有する主体。日本市場では信託銀行が中心。"@ja ;
     skos:prefLabel "trustee (trust-account holder)"@en,
         "信託口名義人"@ja ;
     skos:scopeNote "Typical examples include 日本マスタートラスト信託銀行（信託口）and 日本カストディ銀行（信託口）."@en ;
@@ -102,7 +109,8 @@ jfibo:holderRole a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
     rdfs:range jfibo:HolderRole ;
     rdfs:subPropertyOf dcterms:type ;
-    skos:definition "Relates a major-shareholder claim to the role its holder plays."@en ;
+    skos:definition "Relates a major-shareholder claim to the role its holder plays."@en,
+        "大株主主張をその保有者が果たす役割と関連付けるプロパティ。"@ja ;
     skos:prefLabel "holder role"@en,
         "保有者役割"@ja ;
     skos:scopeNote "Range should be one of the named individuals of jfibo:HolderRole; defaults to RegisteredHolder when the disclosure is silent."@en ;
@@ -115,7 +123,8 @@ jfibo:HolderRole a owl:Class ;
     dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/holder-role/> ;
     rdfs:subClassOf skos:Concept ;
-    skos:definition "Closed vocabulary for the role a shareholder plays — beneficial owner, registered holder, trustee, custody bank, standing proxy, ADR depositary, or individual shareholder."@en ;
+    skos:definition "Closed vocabulary for the role a shareholder plays — beneficial owner, registered holder, trustee, custody bank, standing proxy, ADR depositary, or individual shareholder."@en,
+        "保有者の役割を表す閉じた語彙——実質保有者・名義保有者・受託者・名義管理人・カストディアン・戦略保有・純投資・政策保有。"@ja ;
     skos:prefLabel "holder role"@en,
         "保有者役割"@ja ;
     skos:scopeNote "This distinction is critical in Japanese MajorShareholders tables; trust banks (信託口) and custody banks frequently appear as the largest registered holders without being the beneficial owners."@en ;

@@ -1,0 +1,90 @@
+jfibo_term,label_en,label_ja,status,kind,parents,sources
+ADRDepositary,ADR depositary,ＡＤＲ預託機関,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+AccountingDisclosure,accounting disclosure,会計開示,proposed,NamedIndividual,,https://www.fsa.go.jp/search/20251111.html
+AnnualSecuritiesReport,annual securities report,有価証券報告書,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+BankingActOfJapan,Banking Act of Japan,銀行法,proposed,NamedIndividual,,https://www.japaneselawtranslation.go.jp/en/laws/view/3403
+BeneficialHolder,beneficial holder,実質株主,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+BorrowingsClaim,borrowings claim,借入金主張,proposed,Class,https://w3id.org/jfibo/ontology/JP/core/DisclosureClaim,https://www.fsa.go.jp/search/20251111.html
+CabinetOfficeOrdinanceOnCorporateDisclosure,Cabinet Office Ordinance on Disclosure of Corporate Affairs,企業内容等の開示に関する内閣府令,proposed,NamedIndividual,,https://elaws.e-gov.go.jp/document?lawid=348M50000040005
+CommercialPaperClaim,commercial paper claim,コマーシャル・ペーパー残高開示,proposed,Class,https://w3id.org/jfibo/ontology/JP/core/DisclosureClaim,https://www.fsa.go.jp/search/20251111.html
+CompaniesAct,Companies Act of Japan,会社法,proposed,NamedIndividual,,https://www.japaneselawtranslation.go.jp/en/laws/view/3206
+CorporateGovernanceReport,corporate governance report,コーポレート・ガバナンス報告書,proposed,NamedIndividual,,https://www.jpx.co.jp/english/equities/listing/cg/index.html
+Counterfactual,counterfactual,反実仮想,experimental-consumer-only,NamedIndividual,,https://www.w3.org/TR/prov-o/
+CrossShareholdingClaim,cross-shareholding claim,相互保有主張,proposed,Class,https://w3id.org/jfibo/ontology/JP/core/DisclosureClaim,https://www.fsa.go.jp/search/20251111.html
+CustodyBank,custody bank,カストディ銀行,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+Disclosed,disclosed,開示済み,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+DisclosureClaim,disclosure claim,開示主張,proposed,Class,http://www.w3.org/ns/prov#Entity,https://disclosure2.edinet-fsa.go.jp/; https://www.w3.org/TR/prov-o/
+DocumentType,disclosure document type,開示書類種別,proposed,Class,http://www.w3.org/2004/02/skos/core#Concept,https://www.fsa.go.jp/search/20251111.html
+EDINETDisclosureDocument,EDINET disclosure document,EDINET開示書類,proposed,Class,http://www.w3.org/ns/prov#Entity,https://disclosure2.edinet-fsa.go.jp/
+EDINETTaxonomyElement,EDINET taxonomy element,EDINETタクソノミ要素,proposed,Class,http://www.w3.org/2004/02/skos/core#Concept,https://www.fsa.go.jp/search/20251111.html
+EvidenceBackedInferred,evidence-backed inferred,証拠付き推論,proposed,NamedIndividual,,https://www.w3.org/TR/prov-o/
+EvidenceItem,evidence item,証拠項目,proposed,Class,http://www.w3.org/ns/prov#Entity,https://www.fsa.go.jp/search/20251111.html; https://www.w3.org/TR/prov-o/
+ExtraordinaryReport,extraordinary report,臨時報告書,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+FinancialInstrumentsAndExchangeAct,Financial Instruments and Exchange Act (FIEL),金融商品取引法,proposed,NamedIndividual,,https://www.japaneselawtranslation.go.jp/en/laws/view/2355
+GodoKaisha,godo kaisha,合同会社,proposed,Class,https://www.omg.org/spec/Commons/Organizations/FormalOrganization,https://www.japaneselawtranslation.go.jp/en/laws/view/3206
+GovernanceDisclosure,governance disclosure,ガバナンス開示,proposed,NamedIndividual,,https://www.jpx.co.jp/english/equities/listing/cg/index.html
+HolderRole,holder role,保有者役割,proposed,Class,http://www.w3.org/2004/02/skos/core#Concept,https://disclosure2.edinet-fsa.go.jp/
+Hypothesized,hypothesized,仮説,proposed,NamedIndividual,,https://www.w3.org/TR/prov-o/
+IndividualShareholder,individual shareholder,個人株主,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+InferredHypothesis,inferred hypothesis,推論仮説,proposed,NamedIndividual,,https://www.w3.org/TR/prov-o/
+InformationBoundary,information boundary,情報境界,experimental-consumer-only,Class,http://www.w3.org/ns/prov#Entity,https://www.w3.org/TR/prov-o/
+InformationSet,information set,情報集合,proposed,Class,http://www.w3.org/ns/prov#Entity,https://www.w3.org/TR/prov-o/
+InformationStatus,information status,情報状態,proposed,Class,http://www.w3.org/2004/02/skos/core#Concept,https://www.w3.org/TR/skos-reference/
+InstitutionalExpectation,institutional expectation,制度的期待,proposed,NamedIndividual,,https://www.nber.org/papers/w23715
+InstitutionalRelationshipHypothesis,institutional relationship hypothesis,制度的関係仮説,proposed,Class,https://w3id.org/jfibo/ontology/JP/core/DisclosureClaim,https://www.w3.org/TR/prov-o/
+JPXListingRules,JPX/TSE Listing Rules,東証上場規程,proposed,NamedIndividual,,https://www.jpx.co.jp/english/equities/listing/index.html
+Japan,Japan,日本,,NamedIndividual,,https://www.iso.org/obp/ui/#iso:code:3166:JP
+JapanCGCode,Japan Corporate Governance Code,コーポレートガバナンス・コード,proposed,NamedIndividual,,https://www.jpx.co.jp/english/equities/listing/cg/index.html
+JapaneseLanguage,Japanese (ja),日本語,,NamedIndividual,,https://www.iso.org/iso-639-language-code
+JapaneseListedShare,Japanese listed share,日本上場株式,proposed,Class,https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/ListedShare,https://www.fsa.go.jp/search/20251111.html
+JapaneseYen,Japanese yen,日本円,,NamedIndividual,,https://www.iso.org/iso-4217-currency-codes.html
+KabushikiKaisha,kabushiki kaisha,株式会社,proposed,Class,https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/Corporation,https://www.japaneselawtranslation.go.jp/en/laws/view/3206
+LargeShareholdingReport,large-shareholding report,大量保有報告書,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+LegalObligation,legal obligation,法的義務,proposed,NamedIndividual,,https://www.japaneselawtranslation.go.jp/en/laws/view/3206
+MainBankCandidate,main-bank candidate,メインバンク候補,proposed,Class,https://w3id.org/jfibo/ontology/JP/core/DisclosureClaim,https://www.fsa.go.jp/search/20251111.html; https://www.nber.org/papers/w23715
+MajorShareholderClaim,major shareholder claim,大株主主張,proposed,Class,https://w3id.org/jfibo/ontology/JP/core/DisclosureClaim,https://www.fsa.go.jp/search/20251111.html
+NormativeStatus,normative status,規範ステータス,proposed,Class,http://www.w3.org/2004/02/skos/core#Concept,https://www.w3.org/TR/skos-reference/
+Observed,observed,観測済み,proposed,NamedIndividual,,https://www.w3.org/TR/prov-o/
+OutsideInformationBoundary,outside information boundary,情報境界外,experimental-consumer-only,NamedIndividual,,https://www.w3.org/TR/prov-o/
+PolicyShareholding,policy shareholding,政策保有株式,proposed,Class,https://w3id.org/jfibo/ontology/JP/core/DisclosureClaim,https://www.fsa.go.jp/search/20251111.html; https://www.jpx.co.jp/english/equities/listing/cg/index.html
+Predicted,predicted,予測,experimental-consumer-only,NamedIndividual,,https://www.w3.org/TR/prov-o/
+QuarterlySecuritiesReport,quarterly securities report,四半期報告書,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+RegisteredHolder,registered holder,名義株主,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+ReportingRegime,reporting regime,報告規制,proposed,Class,http://www.w3.org/2004/02/skos/core#Concept,https://www.fsa.go.jp/search/20251111.html
+SemiAnnualSecuritiesReport,semi-annual securities report,半期報告書,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+SougouShousha,sougou shousha (general trading company),総合商社,proposed,Class,https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/Corporation,https://disclosure2.edinet-fsa.go.jp/
+StandingProxy,standing proxy,常任代理人,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+Trustee,trustee (trust-account holder),信託口名義人,proposed,NamedIndividual,,https://disclosure2.edinet-fsa.go.jp/
+documentType,document type,開示書類種別,proposed,ObjectProperty,,https://www.w3.org/TR/skos-reference/
+hasAverageRate,average interest rate,平均利率,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasBorrower,has borrower,借入元,proposed,ObjectProperty,,https://www.fsa.go.jp/search/20251111.html
+hasBorrowingsClassLabel,borrowings class label,借入金区分ラベル,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasCarryingAmount,has carrying amount,貸借対照表計上額,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasClosingBalance,closing balance,期末残高,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasEDINETCode,EDINET code,EDINETコード,,DatatypeProperty,,https://disclosure2.edinet-fsa.go.jp/
+hasEvidenceElement,has evidence element,証拠EDINET要素,proposed,ObjectProperty,,https://www.fsa.go.jp/search/20251111.html
+hasHojinBango,法人番号 (corporate number),法人番号,,DatatypeProperty,,https://www.gleif.org/en/lei-data/lei-mapping/gleif-national-tax-agency-of-japan-mapping; https://www.houjin-bangou.nta.go.jp/
+hasHolder,has registered holder,名義株主,proposed,ObjectProperty,,https://www.fsa.go.jp/search/20251111.html
+hasHoldingPurpose,has holding purpose,保有目的,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasInvestor,has investor,投資者,proposed,ObjectProperty,,https://www.fsa.go.jp/search/20251111.html
+hasIssuer,has issuer,発行者,proposed,ObjectProperty,,https://www.fsa.go.jp/search/20251111.html
+hasLEI,Legal Entity Identifier (ISO 17442),,,DatatypeProperty,,https://www.gleif.org/; https://www.iso.org/standard/78829.html
+hasLender,has lender,貸出元,proposed,ObjectProperty,,https://www.fsa.go.jp/search/20251111.html
+hasOfficialJapaneseLabel,has official Japanese label,公式日本語ラベル,proposed,AnnotationProperty,,https://www.fsa.go.jp/search/20251111.html
+hasOpeningBalance,opening balance,期首残高,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasOwnershipPercentage,has ownership percentage,所有株式数の割合,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasRepaymentDeadline,repayment deadline,返済期限,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasShareCount,has share count,株式数,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasShareholderRank,has shareholder rank,大株主順位,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+hasUnitLabel,has unit label,単位ラベル,proposed,DatatypeProperty,,https://www.fsa.go.jp/search/20251111.html
+holderRole,holder role,保有者役割,proposed,ObjectProperty,,https://www.w3.org/TR/skos-reference/
+informationStatus,information status,情報状態,proposed,ObjectProperty,,https://www.w3.org/TR/skos-reference/
+linkedToLEIRecord,linked to GLEIF LEI record,,,ObjectProperty,,https://www.gleif.org/ontology/L1/
+mapsToEdinetElement,maps to EDINET element,EDINET要素に対応,proposed,ObjectProperty,,https://www.fsa.go.jp/search/20251111.html
+normativeStatus,normative status,規範ステータス,proposed,ObjectProperty,,https://www.w3.org/TR/skos-reference/
+reportingRegime,reporting regime,報告規制,proposed,ObjectProperty,,https://www.w3.org/TR/skos-reference/
+withinInformationSet,within information set,情報集合内,proposed,ObjectProperty,,https://www.w3.org/TR/prov-o/
+xbrlAbstract,XBRL abstract flag,XBRL抽象要素,proposed,AnnotationProperty,,https://www.fsa.go.jp/search/20251111.html
+xbrlPeriodType,XBRL period type,XBRL期間区分,proposed,AnnotationProperty,,https://www.fsa.go.jp/search/20251111.html
+xbrlPrefix,XBRL namespace prefix,XBRLプレフィックス,proposed,AnnotationProperty,,https://www.fsa.go.jp/search/20251111.html
+xbrlType,XBRL item type,XBRLデータ型,proposed,AnnotationProperty,,https://www.fsa.go.jp/search/20251111.html

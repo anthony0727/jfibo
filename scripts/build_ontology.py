@@ -154,8 +154,12 @@ def add_common_metadata(
     g.add((iri, SKOS.prefLabel, Literal(labels["en"], lang="en")))
     g.add((iri, SKOS.prefLabel, Literal(labels["ja"], lang="ja")))
     g.add((iri, SKOS.definition, Literal(term["definition_en"].strip(), lang="en")))
+    if term.get("definition_ja"):
+        g.add((iri, SKOS.definition, Literal(term["definition_ja"].strip(), lang="ja")))
     if term.get("scope_note_en"):
         g.add((iri, SKOS.scopeNote, Literal(term["scope_note_en"].strip(), lang="en")))
+    if term.get("scope_note_ja"):
+        g.add((iri, SKOS.scopeNote, Literal(term["scope_note_ja"].strip(), lang="ja")))
     for src in term["sources"]:
         g.add((iri, DCTERMS.source, URIRef(src)))
     g.add((iri, JPFIBO.status, Literal(term.get("status", "proposed"))))

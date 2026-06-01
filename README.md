@@ -2,7 +2,7 @@
 
 > **Independent research artifact** — not endorsed by FSA, Digital Agency, JPX, BOJ, FISC, FDUA, EDM Council, or OMG. The `J-FIBO` brand and `jfibo:` prefix are provisional. See [`docs/governance-status.md`](docs/governance-status.md).
 
-J-FIBO is an OWL/SHACL ontology that defines the Japanese securities-disclosure system as a semantic layer: legal forms, reporting regimes, disclosure document types, holder roles, ownership and financing concepts, and the institutional relationships that distinguish the Japanese market from other major jurisdictions. It extends [FIBO](https://spec.edmcouncil.org/fibo/) where FIBO already defines the parent concept, and aligns to the FSA-published EDINET XBRL taxonomy where the disclosure layer requires a reporting-tag mapping.
+J-FIBO (金融意味基盤・日本版) is semantic infrastructure for Japanese finance — an OWL/SHACL ontology compatible with Japan's interoperability direction and aligned to [FIBO](https://spec.edmcouncil.org/fibo/) (EDM Council, MIT). It defines the Japanese securities-disclosure system as a semantic layer: legal forms, reporting regimes, disclosure document types, holder roles, ownership and financing concepts, and the institutional relationships that distinguish the Japanese market from other major jurisdictions. It extends [FIBO](https://spec.edmcouncil.org/fibo/) where FIBO already defines the parent concept, and aligns to the FSA-published EDINET XBRL taxonomy where the disclosure layer requires a reporting-tag mapping.
 
 J-FIBO is not an AI benchmark, not an EDINET replacement, and not a database of facts. It is the meaning layer that lets banks, regulators, researchers, and (incidentally) AI consumers reason about Japanese disclosure on common ground.
 

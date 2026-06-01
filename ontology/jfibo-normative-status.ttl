@@ -9,10 +9,12 @@ jfibo:AccountingDisclosure a owl:NamedIndividual,
         jfibo:NormativeStatus ;
     dcterms:source <https://www.fsa.go.jp/search/20251111.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/normative-status/> ;
-    skos:definition "A claim whose normative force is the accounting / financial-reporting disclosure rule that requires it (e.g., 財務諸表等規則, IFRS-as-adopted)."@en ;
+    skos:definition "A claim whose normative force is the accounting / financial-reporting disclosure rule that requires it (e.g., 財務諸表等規則, IFRS-as-adopted)."@en,
+        "会計・財務報告ルール（例：財務諸表等規則、IFRS-as-adopted）により要求される開示としての規範根拠を持つ主張。"@ja ;
     skos:prefLabel "accounting disclosure"@en,
         "会計開示"@ja ;
-    skos:scopeNote "Use for balance-sheet line items, borrowings schedules, and other quantitative financial-statement evidence."@en ;
+    skos:scopeNote "Use for balance-sheet line items, borrowings schedules, and other quantitative financial-statement evidence."@en,
+        "貸借対照表項目、借入金明細、その他の財務諸表上の定量的エビデンスに使用する。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -22,7 +24,8 @@ jfibo:GovernanceDisclosure a owl:NamedIndividual,
         jfibo:NormativeStatus ;
     dcterms:source <https://www.jpx.co.jp/english/equities/listing/cg/index.html> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/normative-status/> ;
-    skos:definition "A claim disclosed under corporate-governance disclosure rules — Japan CG Code principles, JPX listing rules, governance-report items."@en ;
+    skos:definition "A claim disclosed under corporate-governance disclosure rules — Japan CG Code principles, JPX listing rules, governance-report items."@en,
+        "コーポレートガバナンス開示ルール（CGコード原則、JPX上場規則、ガバナンス報告書項目）に基づいて開示された主張。"@ja ;
     skos:prefLabel "governance disclosure"@en,
         "ガバナンス開示"@ja ;
     skos:scopeNote "Use for policy-shareholding disclosures, board-composition, and other Principle-1.4-style governance items."@en ;
@@ -35,10 +38,12 @@ jfibo:InferredHypothesis a owl:NamedIndividual,
         jfibo:NormativeStatus ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/normative-status/> ;
-    skos:definition "A claim that exists only as the J-FIBO consumer's inference; it has no external normative force."@en ;
+    skos:definition "A claim that exists only as the J-FIBO consumer's inference; it has no external normative force."@en,
+        "J-FIBO利用者の推論としてのみ存在し、外部の規範的根拠を持たない主張。"@ja ;
     skos:prefLabel "inferred hypothesis"@en,
         "推論仮説"@ja ;
-    skos:scopeNote "Pair with informationStatus = Hypothesized; the SHACL shape for MainBankCandidate already enforces this."@en ;
+    skos:scopeNote "Pair with informationStatus = Hypothesized; the SHACL shape for MainBankCandidate already enforces this."@en,
+        "informationStatus = Hypothesizedと併用する。MainBankCandidateのSHACL形状はこれを既に強制する。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -48,10 +53,12 @@ jfibo:InstitutionalExpectation a owl:NamedIndividual,
         jfibo:NormativeStatus ;
     dcterms:source <https://www.nber.org/papers/w23715> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/normative-status/> ;
-    skos:definition "A claim about an institutional norm that is not legally binding but is widely observed (e.g., main-bank monitoring, keiretsu cooperation)."@en ;
+    skos:definition "A claim about an institutional norm that is not legally binding but is widely observed (e.g., main-bank monitoring, keiretsu cooperation)."@en,
+        "法的拘束力はないが広く観察される制度的規範に関する主張（例：メインバンクのモニタリング、系列協調）。"@ja ;
     skos:prefLabel "institutional expectation"@en,
         "制度的期待"@ja ;
-    skos:scopeNote "Always pair with informationStatus = Hypothesized or EvidenceBackedInferred; never use this as a substitute for a legal obligation."@en ;
+    skos:scopeNote "Always pair with informationStatus = Hypothesized or EvidenceBackedInferred; never use this as a substitute for a legal obligation."@en,
+        "常にinformationStatus = Hypothesized または EvidenceBackedInferredと併用する。法的義務の代替として使ってはならない。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -61,7 +68,8 @@ jfibo:LegalObligation a owl:NamedIndividual,
         jfibo:NormativeStatus ;
     dcterms:source <https://www.japaneselawtranslation.go.jp/en/laws/view/3206> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/normative-status/> ;
-    skos:definition "A claim about a duty imposed by statute or regulation (e.g., a Companies Act duty, a tax-law obligation)."@en ;
+    skos:definition "A claim about a duty imposed by statute or regulation (e.g., a Companies Act duty, a tax-law obligation)."@en,
+        "法令により課された義務に関する主張（例：会社法上の義務、税法上の義務）。"@ja ;
     skos:prefLabel "legal obligation"@en,
         "法的義務"@ja ;
     skos:scopeNote "Use only for duties whose source is a cited statute or regulation; do not use for accounting-treatment disclosures."@en ;
@@ -76,10 +84,12 @@ jfibo:normativeStatus a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/normative-status/> ;
     rdfs:range jfibo:NormativeStatus ;
     rdfs:subPropertyOf dcterms:type ;
-    skos:definition "Relates a claim to its J-FIBO normative status (legal obligation, accounting disclosure, governance disclosure, institutional expectation, inferred hypothesis)."@en ;
+    skos:definition "Relates a claim to its J-FIBO normative status (legal obligation, accounting disclosure, governance disclosure, institutional expectation, inferred hypothesis)."@en,
+        "主張を法的義務・会計開示・ガバナンス開示・制度的期待・推論仮説のいずれかの規範ステータスと関連付けるプロパティ。"@ja ;
     skos:prefLabel "normative status"@en,
         "規範ステータス"@ja ;
-    skos:scopeNote "Orthogonal to informationStatus. A single claim may carry one of each."@en ;
+    skos:scopeNote "Orthogonal to informationStatus. A single claim may carry one of each."@en,
+        "informationStatusと直交する。一つの主張がそれぞれ一つずつを持つことができる。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
@@ -89,10 +99,12 @@ jfibo:NormativeStatus a owl:Class ;
     dcterms:source <https://www.w3.org/TR/skos-reference/> ;
     rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/normative-status/> ;
     rdfs:subClassOf skos:Concept ;
-    skos:definition "Closed vocabulary for the normative force a claim asserts — legal obligation, accounting disclosure, governance disclosure, institutional expectation, or inferred hypothesis."@en ;
+    skos:definition "Closed vocabulary for the normative force a claim asserts — legal obligation, accounting disclosure, governance disclosure, institutional expectation, or inferred hypothesis."@en,
+        "主張が依拠する規範的根拠の閉じた語彙——法的義務・会計開示・ガバナンス開示・制度的期待・推論仮説。"@ja ;
     skos:prefLabel "normative status"@en,
         "規範ステータス"@ja ;
-    skos:scopeNote "Orthogonal to informationStatus. A claim may be Disclosed (information) and an AccountingDisclosure (normative force) at the same time."@en ;
+    skos:scopeNote "Orthogonal to informationStatus. A claim may be Disclosed (information) and an AccountingDisclosure (normative force) at the same time."@en,
+        "informationStatusと直交する。同一の主張がDisclosed（情報）かつAccountingDisclosure（規範根拠）となり得る。"@ja ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.2-finalize> ;
     jfibo:level "propose" ;
