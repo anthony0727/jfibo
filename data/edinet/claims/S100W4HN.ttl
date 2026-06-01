@@ -8,7 +8,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank01> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <urn:jfibo:issuer-fallback:c593fbed3fb5794e> ;
@@ -22,7 +22,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank02> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/1010001075076> ;
@@ -36,7 +36,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank03> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/8010001143625> ;
@@ -50,7 +50,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank04> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/7010001008844> ;
@@ -64,7 +64,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank05> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <urn:jfibo:issuer-fallback:117ea126366cbee6> ;
@@ -78,7 +78,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank06> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <urn:jfibo:issuer-fallback:3ca337d8ada88d69> ;
@@ -92,7 +92,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank07> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/7010001008844> ;
@@ -106,7 +106,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank08> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <urn:jfibo:issuer-fallback:609b2ce2ecb9ae3e> ;
@@ -120,7 +120,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank09> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/7010001008844> ;
@@ -134,7 +134,7 @@
 
 <urn:jfibo:claim:S100W4HN/major-shareholder/rank10> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:15:00.112839+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.559386+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100W4HN> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <urn:jfibo:issuer-fallback:a53f029b8143378f> ;

@@ -1,8 +1,8 @@
 {
-  "claims": 223,
-  "mean_vanilla_coverage": 0.2799536039446353,
-  "mean_jfibo_coverage": 0.9732980024459844,
-  "mean_jfibo_gain": 0.6933443985013492,
+  "claims": 280,
+  "mean_vanilla_coverage": 0.2814046072974644,
+  "mean_jfibo_coverage": 0.973538961038961,
+  "mean_jfibo_gain": 0.6921343537414966,
   "by_kind": {
     "BorrowingsClaim": {
       "claims": 5,
@@ -23,16 +23,16 @@
       "mean_jfibo_gain": 0.7142857142857143
     },
     "MajorShareholderClaim": {
-      "claims": 40,
+      "claims": 50,
       "mean_vanilla_coverage": 0.36363636363636365,
       "mean_jfibo_coverage": 1.0,
       "mean_jfibo_gain": 0.6363636363636364
     },
     "PolicyShareholding": {
-      "claims": 176,
-      "mean_vanilla_coverage": 0.26756198347107435,
-      "mean_jfibo_coverage": 0.9690082644628099,
-      "mean_jfibo_gain": 0.7014462809917356
+      "claims": 223,
+      "mean_vanilla_coverage": 0.26824296779453727,
+      "mean_jfibo_coverage": 0.9690175295556461,
+      "mean_jfibo_gain": 0.7007745617611089
     }
   }
 }

@@ -1,0 +1,100 @@
+{
+  "doc_id": "S100VYOD",
+  "edinet_code": "E02166",
+  "filer_name_ja": "本田技研工業株式会社",
+  "fy_end": "2025-03-31",
+  "rows": [
+    {
+      "rank": 1,
+      "name": "日本マスタートラスト信託銀行株式会社(信託口)",
+      "address": "東京都港区赤坂一丁目８番１号",
+      "shares": 773501000,
+      "shares_unit": "shares",
+      "ownership_pct": 17.77,
+      "holder_role": "Trustee"
+    },
+    {
+      "rank": 2,
+      "name": "株式会社日本カストディ銀行(信託口)",
+      "address": "東京都中央区晴海一丁目８番12号",
+      "shares": 282587000,
+      "shares_unit": "shares",
+      "ownership_pct": 6.49,
+      "holder_role": "Trustee"
+    },
+    {
+      "rank": 3,
+      "name": "モックスレイ・アンド・カンパニー・エルエルシー(常任代理人 株式会社三菱UFJ銀行)",
+      "address": "米国・ニューヨーク(東京都千代田区丸の内一丁目４番５号)",
+      "shares": 247552000,
+      "shares_unit": "shares",
+      "ownership_pct": 5.69,
+      "holder_role": "CustodyBank"
+    },
+    {
+      "rank": 4,
+      "name": "ステート　ストリート　バンク　アンド　トラスト　カンパニー　505001(常任代理人　株式会社みずほ銀行)",
+      "address": "米国・ボストン(東京都港区港南二丁目15番１号)",
+      "shares": 143430000,
+      "shares_unit": "shares",
+      "ownership_pct": 3.3,
+      "holder_role": "CustodyBank"
+    },
+    {
+      "rank": 5,
+      "name": "明治安田生命保険相互会社(常任代理人 株式会社日本カストディ銀行)",
+      "address": "東京都千代田区丸の内二丁目１番１号(東京都中央区晴海一丁目８番12号)",
+      "shares": 138237000,
+      "shares_unit": "shares",
+      "ownership_pct": 3.18,
+      "holder_role": "Trustee"
+    },
+    {
+      "rank": 6,
+      "name": "ステート　ストリート　バンク　ウェストクライアント　トリーティー　505234(常任代理人 株式会社みずほ銀行)",
+      "address": "米国・ノースクインシー(東京都港区港南二丁目15番１号)",
+      "shares": 91703000,
+      "shares_unit": "shares",
+      "ownership_pct": 2.11,
+      "holder_role": "CustodyBank"
+    },
+    {
+      "rank": 7,
+      "name": "ジェーピー　モルガン　チェース　バンク　385781(常任代理人　株式会社みずほ銀行)",
+      "address": "英国・ロンドン(東京都港区港南二丁目15番１号)",
+      "shares": 69455000,
+      "shares_unit": "shares",
+      "ownership_pct": 1.6,
+      "holder_role": "CustodyBank"
+    },
+    {
+      "rank": 8,
+      "name": "JPモルガン証券株式会社",
+      "address": "東京都千代田区丸の内二丁目７番３号",
+      "shares": 64730000,
+      "shares_unit": "shares",
+      "ownership_pct": 1.49,
+      "holder_role": "RegisteredHolder"
+    },
+    {
+      "rank": 9,
+      "name": "日本生命保険相互会社(常任代理人 日本マスタートラスト信託銀行株式会社)",
+      "address": "東京都千代田区丸の内一丁目６番６号(東京都港区赤坂一丁目８番１号)",
+      "shares": 58565000,
+      "shares_unit": "shares",
+      "ownership_pct": 1.35,
+      "holder_role": "Trustee"
+    },
+    {
+      "rank": 10,
+      "name": "アクサ生命保険株式会社",
+      "address": "東京都港区白金一丁目17番３号",
+      "shares": 57000000,
+      "shares_unit": "shares",
+      "ownership_pct": 1.31,
+      "holder_role": "RegisteredHolder"
+    }
+  ],
+  "shares_unit": "shares",
+  "shares_multiplier": 1000
+}

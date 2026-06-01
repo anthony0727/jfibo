@@ -4,7 +4,7 @@
     "Mitsubishi UFJ Financial Group, Inc.": "E03606",
     "SoftBank Group Corp.": "E02778",
     "Mitsubishi Corporation": "E02497",
-    "Honda Motor Co., Ltd.": "E02165"
+    "Honda Motor Co., Ltd.": "E02166"
   },
   "hits": {
     "Toyota Motor Corporation": [
@@ -139,6 +139,38 @@
         "legalStatus": "1"
       }
     ],
-    "Honda Motor Co., Ltd.": []
+    "Honda Motor Co., Ltd.": [
+      {
+        "seqNumber": 354,
+        "docID": "S100VYOD",
+        "edinetCode": "E02166",
+        "secCode": "72670",
+        "JCN": "6010401027577",
+        "filerName": "本田技研工業株式会社",
+        "fundCode": null,
+        "ordinanceCode": "010",
+        "formCode": "030000",
+        "docTypeCode": "120",
+        "periodStart": "2024-04-01",
+        "periodEnd": "2025-03-31",
+        "submitDateTime": "2025-06-18 15:36",
+        "docDescription": "有価証券報告書－第101期(2024/04/01－2025/03/31)",
+        "issuerEdinetCode": null,
+        "subjectEdinetCode": null,
+        "subsidiaryEdinetCode": null,
+        "currentReportReason": null,
+        "parentDocID": null,
+        "opeDateTime": null,
+        "withdrawalStatus": "0",
+        "docInfoEditStatus": "0",
+        "disclosureStatus": "0",
+        "xbrlFlag": "1",
+        "pdfFlag": "1",
+        "attachDocFlag": "1",
+        "englishDocFlag": "0",
+        "csvFlag": "1",
+        "legalStatus": "1"
+      }
+    ]
   }
 }

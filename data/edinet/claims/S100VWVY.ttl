@@ -8,7 +8,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank01> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/1010001075076> ;
@@ -22,7 +22,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank02> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/9180301018726> ;
@@ -36,7 +36,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank03> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/8010001143625> ;
@@ -50,7 +50,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank04> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/7120001077523> ;
@@ -64,7 +64,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank05> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/7010001008844> ;
@@ -78,7 +78,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank06> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/7010001008844> ;
@@ -92,7 +92,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank07> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/9180301018114> ;
@@ -106,7 +106,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank08> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/5010001008838> ;
@@ -120,7 +120,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank09> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/6010401073956> ;
@@ -134,7 +134,7 @@
 
 <urn:jfibo:claim:S100VWVY/major-shareholder/rank10> a jfibo:MajorShareholderClaim ;
     dcterms:valid "2025-03-31"^^xsd:date ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:MajorShareholdersTextBlock ;
     jfibo:hasHolder <https://w3id.org/jfibo/entity/jcn/8010001066718> ;
@@ -149,7 +149,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row10Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 7175000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -172,7 +172,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row11Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 5528000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -195,7 +195,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row12Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 3968000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -218,7 +218,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row13Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 2587000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -241,7 +241,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row14Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 2108000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -264,7 +264,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row15Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 2071000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -287,7 +287,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row16Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 1253000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -310,7 +310,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row17Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 1195000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -333,7 +333,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row18Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 424000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -356,7 +356,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row19Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 12404000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -375,7 +375,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row1Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 26549000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -399,7 +399,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row20Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 9229000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -418,7 +418,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row21Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 7597000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -437,7 +437,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row22Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 5681000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -456,7 +456,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row23Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 7035000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -475,7 +475,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row24Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 7893000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -494,7 +494,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row25Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 3627000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -513,7 +513,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row26Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 8160000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -532,7 +532,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row27Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 4898000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -551,7 +551,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row28Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 4186000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -570,7 +570,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row29Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 2262000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -589,7 +589,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row2Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 5179000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -613,7 +613,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row30Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
         jpcrp_cor:DetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompanyTable,
@@ -630,7 +630,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row31Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 911000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -649,7 +649,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row32Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 392000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -668,7 +668,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row33Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 149000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -687,7 +687,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row34Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 15000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -706,7 +706,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row35Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 47889000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -724,7 +724,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row36Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 44965000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -742,7 +742,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row37Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 44275000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -760,7 +760,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row38Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 11178000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -778,7 +778,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row39Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 6752000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -796,7 +796,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row3Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 1657000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -820,7 +820,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row40Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 4676000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -838,7 +838,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row41Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 1120000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -856,7 +856,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row42Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 128000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -874,7 +874,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row43Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 33000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfSpecifiedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -892,7 +892,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row4Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 9000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -916,7 +916,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row5Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 12000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -940,7 +940,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row6Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 42641000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -963,7 +963,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row7Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 17203000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -986,7 +986,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row8Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 有"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 13242000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,
@@ -1009,7 +1009,7 @@
 <urn:jfibo:claim:S100VWVY/policy-shareholding/SequentialNumbersAxis-Row9Member> a jfibo:PolicyShareholding ;
     dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "reciprocal-holding-disclosure: 無"@ja ;
-    prov:generatedAtTime "2026-05-25T08:14:59.991845+00:00"^^xsd:dateTime ;
+    prov:generatedAtTime "2026-05-31T23:57:04.408783+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY> ;
     jfibo:hasCarryingAmount 12242000000.0 ;
     jfibo:hasEvidenceElement jpcrp_cor:BookValueDetailsOfDeemedHoldingsOfEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany,

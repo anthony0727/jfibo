@@ -5,7 +5,7 @@ Targets (by EDINET code):
   Mitsubishi UFJ FG     -> E03606  (holding company)
   SoftBank Group Corp   -> E02778
   Mitsubishi Corp       -> E02497
-  Honda Motor Co. Ltd.  -> E02165
+  Honda Motor Co. Ltd.  -> E02166
 
 For each, we scan back N days and return securities reports (docTypeCode 120).
 """
@@ -31,7 +31,7 @@ TARGETS = {
     "Mitsubishi UFJ Financial Group, Inc.": "E03606",
     "SoftBank Group Corp.": "E02778",
     "Mitsubishi Corporation": "E02497",
-    "Honda Motor Co., Ltd.": "E02165",
+    "Honda Motor Co., Ltd.": "E02166",
 }
 SECURITIES_REPORT = "120"
 
