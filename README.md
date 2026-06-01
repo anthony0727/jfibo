@@ -42,6 +42,8 @@ See [`docs/coverage.md`](docs/coverage.md) for the honest scope of what is and i
 
 ## Quick start
 
+**No credentials required.** The default workflow is fully offline — the ontology, SHACL shapes, materialized claims (TTL), and all 47 tests live in the repo:
+
 ```bash
 uv sync
 uv run python scripts/build_ontology.py
@@ -49,9 +51,14 @@ uv run python scripts/validate.py examples/policy-shareholding-valid.ttl
 uv run python -m pytest
 ```
 
-Reproducing the EDINET-aligned examples (requires `EDINET_API_KEY` in `~/.env`, never committed):
+That's everything a contributor needs to clone, run, and submit a PR.
+
+### Optional: refresh the EDINET-aligned corpus
+
+You only need this if you're adding a new filing or company to the materialized corpus. The raw EDINET ZIPs are gitignored and reproducible from the scripts below. Requires a free [EDINET API key](https://disclosure2dl.edinet-fsa.go.jp/) exported as `EDINET_API_KEY`:
 
 ```bash
+export EDINET_API_KEY=...   # also accepted via ~/.env, never committed
 uv run python scripts/download_edinet_taxonomy.py
 uv run python scripts/build_edinet_focus.py
 uv run python scripts/find_target_filings.py --days 400 --strict
@@ -63,6 +70,18 @@ uv run python scripts/materialize_claims.py
 ```
 
 The `--strict` flag exits non-zero if any requested target filing is not found, so partial runs fail loudly.
+
+## Contributing
+
+J-FIBO is open source and contributions are welcome. **You do not need an EDINET API key to contribute** — the ontology, shapes, fixtures, and tests are all checked in, and CI runs entirely offline.
+
+| Contribution type | EDINET key needed? |
+|---|---|
+| Docs, typos, ontology edits, SHACL shapes, new fixtures, new tests | ❌ No |
+| Refactoring scripts under `scripts/` | ❌ No |
+| Adding a *new* EDINET filing / company to the materialized corpus | ✅ Yes (local only — CI does not need it) |
+
+CI on every PR runs `uv run python -m pytest` plus SHACL positive/negative validation and an OWL-profile check. All gates pass without credentials.
 
 ## Layout
 
