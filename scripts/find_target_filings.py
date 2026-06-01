@@ -54,10 +54,6 @@ def fetch_day(date: str, key: str) -> dict:
 
 
 def main() -> int:
-    key = os.environ.get("EDINET_API_KEY")
-    if not key:
-        print("EDINET_API_KEY not set", file=sys.stderr)
-        return 2
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=400, help="days back from --end-date")
     ap.add_argument("--end-date", default=None, help="YYYY-MM-DD (defaults to today)")
@@ -66,6 +62,11 @@ def main() -> int:
     ap.add_argument("--strict", action="store_true",
                     help="exit non-zero if any target not found within the scan window")
     args = ap.parse_args()
+
+    key = os.environ.get("EDINET_API_KEY")
+    if not key:
+        print("EDINET_API_KEY not set", file=sys.stderr)
+        return 2
 
     end = dt.date.fromisoformat(args.end_date) if args.end_date else dt.date.today()
     targets_remaining = dict(TARGETS)
