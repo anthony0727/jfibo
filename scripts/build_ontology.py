@@ -81,7 +81,7 @@ EDINET_RDF_PREFIXES: dict[str, Namespace] = {
 
 VALID_LOCAL = re.compile(r"^[A-Za-z][A-Za-z0-9]*$")
 VALID_QNAME = re.compile(r"^[A-Za-z][A-Za-z0-9_-]*:[A-Za-z_][A-Za-z0-9_\-.]*$")
-VALID_STATUS = {"proposed", "reviewed", "stable"}
+VALID_STATUS = {"proposed", "reviewed", "stable", "experimental-consumer-only"}
 VALID_LEVEL = {"reuse", "align", "propose"}
 VALID_KIND = {"class", "object_property", "datatype_property", "annotation_property", "individual"}
 
@@ -454,6 +454,19 @@ def write_outputs(graphs: dict[str, Graph], registry: dict[str, Any]) -> None:
         print(f"wrote {out.relative_to(REPO)} ({len(g)} triples)")
         for triple in g:
             aggregate.add(triple)
+
+    # Merge hand-authored modules not generated from registry/terms.yaml.
+    # These are vetted, file-stable, and live alongside the generated modules.
+    HAND_AUTHORED = [
+        REPO / "ontology" / "jfibo-external-alignment.ttl",
+    ]
+    for fp in HAND_AUTHORED:
+        if fp.exists():
+            extra = Graph()
+            extra.parse(fp, format="turtle")
+            for triple in extra:
+                aggregate.add(triple)
+            print(f"merged {fp.relative_to(REPO)} ({len(extra)} triples)")
 
     aggregate.serialize(destination=AGGREGATE_OUT, format="turtle")
     print(f"wrote {AGGREGATE_OUT.relative_to(REPO)} ({len(aggregate)} triples)")

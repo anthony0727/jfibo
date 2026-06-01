@@ -171,7 +171,7 @@ terms:
     definition_en: A boundary describing which information is inside the auditable evidence set for an explanation and which is outside it.
     scope_note_en: Reasoning may explore outside-boundary hypotheses, but claims outside the boundary must not be presented as evidence-backed explanations.
     sources: ["https://www.w3.org/TR/prov-o/"]
-    status: proposed
+    status: experimental-consumer-only
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
@@ -249,7 +249,7 @@ terms:
     definition_en: A claim about what would have happened under conditions that did not occur in the cited evidence.
     scope_note_en: Always outside direct disclosure; useful for analysis but not for auditable explanation unless clearly marked.
     sources: ["https://www.w3.org/TR/prov-o/"]
-    status: proposed
+    status: experimental-consumer-only
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
@@ -262,7 +262,7 @@ terms:
     definition_en: A forward-looking claim produced by a model or analyst rather than reported as a historical fact.
     scope_note_en: Predictions may be stored but should not be confused with explanations of disclosed historical events.
     sources: ["https://www.w3.org/TR/prov-o/"]
-    status: proposed
+    status: experimental-consumer-only
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 
@@ -275,7 +275,7 @@ terms:
     definition_en: A claim whose required evidence is not inside the stated information set.
     scope_note_en: Use to prevent latent belief, hidden negotiation, or unsupported causal claims from being represented as auditable explanations.
     sources: ["https://www.w3.org/TR/prov-o/"]
-    status: proposed
+    status: experimental-consumer-only
     contributed_by: jfibo-wg-bootstrap
     session: 2026-05-25-v0.1-bootstrap
 

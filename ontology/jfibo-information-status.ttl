@@ -16,7 +16,7 @@ jfibo:Counterfactual a owl:NamedIndividual,
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
-    jfibo:status "proposed" .
+    jfibo:status "experimental-consumer-only" .
 
 jfibo:Disclosed a owl:NamedIndividual,
         jfibo:InformationStatus ;
@@ -68,7 +68,7 @@ jfibo:InformationBoundary a owl:Class ;
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
-    jfibo:status "proposed" .
+    jfibo:status "experimental-consumer-only" .
 
 jfibo:InformationSet a owl:Class ;
     dcterms:source <https://www.w3.org/TR/prov-o/> ;
@@ -107,7 +107,7 @@ jfibo:OutsideInformationBoundary a owl:NamedIndividual,
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
-    jfibo:status "proposed" .
+    jfibo:status "experimental-consumer-only" .
 
 jfibo:Predicted a owl:NamedIndividual,
         jfibo:InformationStatus ;
@@ -120,7 +120,7 @@ jfibo:Predicted a owl:NamedIndividual,
     prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
     prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-05-25-v0.1-bootstrap> ;
     jfibo:level "propose" ;
-    jfibo:status "proposed" .
+    jfibo:status "experimental-consumer-only" .
 
 jfibo:informationStatus a owl:ObjectProperty ;
     dcterms:source <https://www.w3.org/TR/skos-reference/> ;

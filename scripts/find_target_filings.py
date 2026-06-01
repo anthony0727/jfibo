@@ -54,16 +54,19 @@ def fetch_day(date: str, key: str) -> dict:
 
 
 def main() -> int:
-    key = os.environ.get("EDINET_API_KEY")
-    if not key:
-        print("EDINET_API_KEY not set", file=sys.stderr)
-        return 2
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=400, help="days back from --end-date")
     ap.add_argument("--end-date", default=None, help="YYYY-MM-DD (defaults to today)")
     ap.add_argument("--doc-type", default=SECURITIES_REPORT, help="EDINET docTypeCode")
     ap.add_argument("--out", type=Path, default=REPO / "data" / "edinet" / "target_filings.json")
+    ap.add_argument("--strict", action="store_true",
+                    help="exit non-zero if any target not found within the scan window")
     args = ap.parse_args()
+
+    key = os.environ.get("EDINET_API_KEY")
+    if not key:
+        print("EDINET_API_KEY not set", file=sys.stderr)
+        return 2
 
     end = dt.date.fromisoformat(args.end_date) if args.end_date else dt.date.today()
     targets_remaining = dict(TARGETS)
@@ -91,12 +94,21 @@ def main() -> int:
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps({"targets": TARGETS, "hits": hits}, ensure_ascii=False, indent=2))
+    misses = [n for n, ms in hits.items() if not ms]
     for name, ms in hits.items():
         if ms:
             m = ms[0]
             print(f"FOUND  {name:42s} {m['docID']}  {m['submitDateTime']}  {m['docDescription']}")
         else:
             print(f"MISS   {name}")
+    if misses:
+        print(f"\nSUMMARY: {len(TARGETS) - len(misses)}/{len(TARGETS)} targets found; "
+              f"{len(misses)} missing: {misses}", file=sys.stderr)
+        if args.strict:
+            print("ERROR: --strict was set; failing because targets are missing", file=sys.stderr)
+            return 3
+    else:
+        print(f"\nSUMMARY: all {len(TARGETS)} targets found", file=sys.stderr)
     return 0
 
 

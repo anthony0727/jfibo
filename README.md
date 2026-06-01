@@ -2,28 +2,42 @@
 
 > **Independent research artifact** — not endorsed by FSA, Digital Agency, JPX, BOJ, FISC, FDUA, EDM Council, or OMG. The `J-FIBO` brand and `jfibo:` prefix are provisional. See [`docs/governance-status.md`](docs/governance-status.md).
 
-J-FIBO is a Japanese-finance extension of [FIBO](https://spec.edmcouncil.org/fibo/): a canonical OWL/SHACL dictionary of the roles, responsibilities, reporting regimes, and relationships specific to the Japanese securities-disclosure system, with verbatim alignment to the FSA-published EDINET XBRL taxonomy.
+J-FIBO is an OWL/SHACL ontology that defines the Japanese securities-disclosure system as a semantic layer: legal forms, reporting regimes, disclosure document types, holder roles, ownership and financing concepts, and the institutional relationships that distinguish the Japanese market from other major jurisdictions. It extends [FIBO](https://spec.edmcouncil.org/fibo/) where FIBO already defines the parent concept, and aligns to the FSA-published EDINET XBRL taxonomy where the disclosure layer requires a reporting-tag mapping.
 
-## Status (v0.5)
+J-FIBO is not an AI benchmark, not an EDINET replacement, and not a database of facts. It is the meaning layer that lets banks, regulators, researchers, and (incidentally) AI consumers reason about Japanese disclosure on common ground.
 
-| Metric | Value |
-|---|---:|
-| Triples | 1,740 |
-| Aligned EDINET concepts (verbatim FSA labels) | 56 |
-| Real EDINET FY2024 claims materialized | 223 |
-| Claim families | PolicyShareholding · MajorShareholderClaim · BorrowingsClaim · CommercialPaperClaim · CrossShareholdingClaim · MainBankCandidate |
-| Cross-shareholding triangulations (real) | 1 (Toyota Motor ↔ MUFG) |
-| Vanilla-FIBO vs J-FIBO coverage on real claims | 0.280 → 0.973 (**gain +0.693**) |
-| Curated benchmark gain (19 cases) | +0.703 |
-| Tests | 40 / 40 |
+## Scope (v1.0)
 
-Real filings: Toyota Motor Corp, ITOCHU, Mitsubishi UFJ FG, SoftBank Group (FY2024 有価証券報告書).
+| Layer | What it covers |
+|---|---|
+| Legal entities | `KabushikiKaisha`, `GodoKaisha`, listed/unlisted, financial-institution sub-types (bank, trust bank, insurance, securities, asset management) |
+| Reporting regimes | Companies Act · FIEL · Cabinet Office Ordinance on Disclosure · CG Code · JPX listing rules · TDnet |
+| Disclosure documents | Annual / quarterly / semi-annual / extraordinary securities reports · large-shareholding reports · corporate-governance reports · tender-offer notifications |
+| Holder roles | Beneficial · registered · trustee · nominee · custodian · strategic · pure-investment · policy |
+| Ownership & financing | Shareholding, policy shareholding, specified investment shares, cross-shareholding, borrowings (short/long, syndicated), commercial paper |
+| Institutional relationships | Keiretsu, business alliance, capital alliance, parent-subsidiary, listed-subsidiary, stable-shareholder, main-bank (candidate-only in v1.0) |
+| External alignment | FIBO (`fibo-*`) · CMNS (`cmns-*`) · LCC (`lcc-*`) · GLEIF LEI · EDINET XBRL taxonomy |
+
+## Conformance
+
+| Check | Status |
+|---|---|
+| OWL parses, imports resolve, no undefined IRIs | ✅ |
+| Every public term has Japanese + English `skos:prefLabel` | ✅ |
+| Every stable term has a `dcterms:source` citation | ✅ |
+| SHACL shapes validate all `examples/valid/` | ✅ |
+| SHACL shapes reject all `examples/invalid/` with the expected constraint | ✅ |
+| Persistent `owl:versionIRI` on every module | ✅ |
+| OWL 2 RL profile (no constructs requiring DL/EL classification) | ✅ |
+| CI gates on every PR (pytest + ROBOT profile + pySHACL) | ✅ |
+
+See [`docs/coverage.md`](docs/coverage.md) for the honest scope of what is and isn't covered.
 
 ## Naming
 
 | Surface | Form |
 |---|---|
-| Brand | **J-FIBO** (J-REIT / J-GAAP / J-SOX family) |
+| Brand | **J-FIBO** (sibling of J-REIT, J-GAAP, J-SOX naming) |
 | Repo / package / prefix / IRI | `j-fibo` / `jfibo` / `jfibo:` / `https://w3id.org/jfibo/` |
 
 ## Quick start
@@ -32,37 +46,42 @@ Real filings: Toyota Motor Corp, ITOCHU, Mitsubishi UFJ FG, SoftBank Group (FY20
 uv sync
 uv run python scripts/build_ontology.py
 uv run python scripts/validate.py examples/policy-shareholding-valid.ttl
-uv run python benchmark/semantic_loss.py
 uv run python -m pytest
 ```
 
-With an `EDINET_API_KEY` in `~/.env` (never committed):
+Reproducing the EDINET-aligned examples (requires `EDINET_API_KEY` in `~/.env`, never committed):
 
 ```bash
 uv run python scripts/download_edinet_taxonomy.py
 uv run python scripts/build_edinet_focus.py
-uv run python scripts/find_target_filings.py --days 400
+uv run python scripts/find_target_filings.py --days 400 --strict
 uv run python scripts/edinet_client.py download <docID> --type 1
 uv run python scripts/extract_xbrl_facts.py
 uv run python scripts/parse_major_shareholders.py
 uv run python scripts/parse_borrowings.py
 uv run python scripts/materialize_claims.py
-uv run python benchmark/real_data_loss.py
 ```
+
+The `--strict` flag exits non-zero if any requested target filing is not found, so partial runs fail loudly.
 
 ## Layout
 
 ```
-registry/         -- term / entity / contributor YAML (source of truth)
-ontology/         -- generated OWL/TTL modules
-shapes/           -- SHACL shapes
-scripts/          -- builders, extractors, materializers
-benchmark/        -- curated + real-data benchmarks
-examples/         -- conformance / non-conformance fixtures
-tests/            -- pytest suite (40 tests)
-docs/             -- governance-status (read first)
-data/             -- mostly gitignored; reproducible via scripts/
+ontology/         OWL/TTL modules — meaning layer
+shapes/           SHACL shapes — conformance layer
+registry/         YAML source of truth for terms / entities / contributors / sources
+examples/         Validation fixtures (valid + invalid)
+scripts/          Builders, EDINET extractors, materializers
+benchmark/        Production benchmark — semantic and EDINET-claim coverage
+tests/            Pytest suite (40 tests)
+docs/             Governance, coverage, release, source, design policies
+research/         Non-production research material (AI-eval cases, etc.)
+data/             Mostly gitignored; reproducible via scripts/
 ```
+
+## Related work, not part of this repo
+
+- **`jp-finance-agent-benchmark`** (planned, separate repo) — trap-family benchmarks for AI agents on Japanese-finance reasoning. Uses J-FIBO as the semantic anchor but is not J-FIBO.
 
 ## License
 

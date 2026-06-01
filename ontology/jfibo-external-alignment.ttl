@@ -1,0 +1,105 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gleif-L1: <https://www.gleif.org/ontology/L1/> .
+@prefix jfibo: <https://w3id.org/jfibo/ontology/JP/core/> .
+@prefix lcc-3166-1: <https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/> .
+@prefix lcc-639-1: <https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# -----------------------------------------------------------------------------
+# J-FIBO external alignment (v1.0)
+#
+# Anchors J-FIBO into the global identifier / code-list ontologies used by
+# FIBO and GLEIF:
+#   - OMG/EDM Council LCC for ISO 639 (ja), ISO 3166 (JP).
+#   - GLEIF L1 for Legal Entity Identifier (LEI) bridging.
+#   - Japan-specific 法人番号 (hojin bangō) datatype property with documented
+#     LEI-mapping guidance based on the GLEIF–NTA published mapping.
+#
+# This module declares no `owl:imports`; it expresses alignment via
+# `skos:exactMatch` and bridge properties so consumers are not forced to
+# materialize the full LCC / GLEIF graphs.
+# -----------------------------------------------------------------------------
+
+<https://w3id.org/jfibo/ontology/JP/external-alignment/> a owl:Ontology ;
+    dcterms:title "J-FIBO external alignment (LCC, GLEIF)"@en ;
+    owl:versionIRI <https://w3id.org/jfibo/ontology/JP/external-alignment/1.0.0/> ;
+    dcterms:issued "2026-06-01"^^xsd:date ;
+    dcterms:source <https://www.omg.org/spec/LCC/> ,
+                   <https://www.gleif.org/en/about-lei/code-lists/iso-17442-the-lei-code-structure> ;
+    rdfs:comment "Anchors J-FIBO into the global identifier / code-list infrastructure used by FIBO and GLEIF."@en .
+
+# ----- Country / language anchors --------------------------------------------
+
+jfibo:Japan a owl:NamedIndividual ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    skos:exactMatch lcc-3166-1:JP ;
+    skos:prefLabel "Japan"@en, "日本"@ja ;
+    skos:notation "JP" ;
+    dcterms:source <https://www.iso.org/obp/ui/#iso:code:3166:JP> ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
+jfibo:JapaneseLanguage a owl:NamedIndividual ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    skos:exactMatch lcc-639-1:ja ;
+    skos:prefLabel "Japanese (ja)"@en, "日本語"@ja ;
+    skos:notation "ja" ;
+    dcterms:source <https://www.iso.org/iso-639-language-code> ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
+jfibo:JapaneseYen a owl:NamedIndividual ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    skos:prefLabel "Japanese yen"@en, "日本円"@ja ;
+    skos:notation "JPY" ;
+    dcterms:source <https://www.iso.org/iso-4217-currency-codes.html> ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
+# ----- Legal-entity identifier bridging --------------------------------------
+
+jfibo:hasLEI a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    rdfs:label "Legal Entity Identifier (ISO 17442)"@en ;
+    skos:definition "ISO 17442 Legal Entity Identifier (LEI) string for a legal entity. 20 alphanumeric characters."@en ;
+    dcterms:source <https://www.iso.org/standard/78829.html>, <https://www.gleif.org/> ;
+    rdfs:range xsd:string ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
+jfibo:linkedToLEIRecord a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    rdfs:label "linked to GLEIF LEI record"@en ;
+    skos:definition "Links a J-FIBO legal entity to its GLEIF LEI L1 record."@en ;
+    rdfs:range gleif-L1:LegalEntity ;
+    dcterms:source <https://www.gleif.org/ontology/L1/> ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
+# ----- Japan-specific corporate identifier (法人番号 / hojin bangō) ----------
+
+jfibo:hasHojinBango a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    rdfs:label "法人番号 (corporate number)"@en, "法人番号"@ja ;
+    skos:definition "13-digit corporate number issued by Japan's National Tax Agency, mandatory for every registered Japanese corporation."@en ;
+    dcterms:source <https://www.houjin-bangou.nta.go.jp/>, <https://www.gleif.org/en/lei-data/lei-mapping/gleif-national-tax-agency-of-japan-mapping> ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "Consumers that hold a GLEIF–NTA mapping SHOULD also attach the corresponding LEI via jfibo:hasLEI to enable global identity linking."@en ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
+
+# ----- EDINET code as a bridging identifier ----------------------------------
+
+jfibo:hasEDINETCode a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://w3id.org/jfibo/ontology/JP/external-alignment/> ;
+    rdfs:label "EDINET code"@en, "EDINETコード"@ja ;
+    skos:definition "FSA-issued EDINET filer code, used as the primary disclosure-side identifier on EDINET."@en ;
+    dcterms:source <https://disclosure2.edinet-fsa.go.jp/> ;
+    rdfs:range xsd:string ;
+    skos:scopeNote "EDINET code is the disclosure-system identifier; 法人番号 is the corporate-registry identifier; LEI is the global-finance identifier. The three SHOULD all be attached to a Japanese listed-company entity when known."@en ;
+    prov:wasAttributedTo <https://w3id.org/jfibo/contributor/jfibo-wg-bootstrap> ;
+    prov:wasGeneratedBy <https://w3id.org/jfibo/session/2026-06-01-v1.0-external-alignment> .
