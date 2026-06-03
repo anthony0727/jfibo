@@ -22,14 +22,14 @@ J-FIBO is not an AI benchmark, not an EDINET replacement, and not a database of 
 
 | Check | Status |
 |---|---|
-| OWL parses, imports resolve, no undefined IRIs | ✅ |
-| Every public term has Japanese + English `skos:prefLabel` | ✅ |
-| Every stable term has a `dcterms:source` citation | ✅ |
-| SHACL shapes validate all `examples/valid/` | ✅ |
-| SHACL shapes reject all `examples/invalid/` with the expected constraint | ✅ |
-| Persistent `owl:versionIRI` on every module | ✅ |
-| OWL 2 RL profile (no constructs requiring DL/EL classification) | ✅ |
-| CI gates on every PR (pytest + ROBOT profile + pySHACL) | ✅ |
+| OWL parses, imports resolve, no undefined IRIs | Pass |
+| Every public term has Japanese + English `skos:prefLabel` | Pass |
+| Every stable term has a `dcterms:source` citation | Pass |
+| SHACL shapes validate all `examples/valid/` | Pass |
+| SHACL shapes reject all `examples/invalid/` with the expected constraint | Pass |
+| Persistent `owl:versionIRI` on every module | Pass |
+| OWL 2 RL profile (no constructs requiring DL/EL classification) | Pass |
+| CI gates on every PR (pytest + ROBOT profile + pySHACL) | Pass |
 
 See [`docs/coverage.md`](docs/coverage.md) for the honest scope of what is and isn't covered.
 
@@ -77,9 +77,9 @@ J-FIBO is open source and contributions are welcome. **You do not need an EDINET
 
 | Contribution type | EDINET key needed? |
 |---|---|
-| Docs, typos, ontology edits, SHACL shapes, new fixtures, new tests | ❌ No |
-| Refactoring scripts under `scripts/` | ❌ No |
-| Adding a *new* EDINET filing / company to the materialized corpus | ✅ Yes (local only — CI does not need it) |
+| Docs, typos, ontology edits, SHACL shapes, new fixtures, new tests | No |
+| Refactoring scripts under `scripts/` | No |
+| Adding a *new* EDINET filing / company to the materialized corpus | Yes (local only — CI does not need it) |
 
 CI on every PR runs `uv run python -m pytest` plus SHACL positive/negative validation and an OWL-profile check. All gates pass without credentials.
 
@@ -92,7 +92,7 @@ registry/         YAML source of truth for terms / entities / contributors / sou
 examples/         Validation fixtures (valid + invalid)
 scripts/          Builders, EDINET extractors, materializers
 benchmark/        Production benchmark — semantic and EDINET-claim coverage
-tests/            Pytest suite (40 tests)
+tests/            Pytest suite (47 tests)
 docs/             Governance, coverage, release, source, design policies
 research/         Non-production research material (AI-eval cases, etc.)
 data/             Mostly gitignored; reproducible via scripts/
