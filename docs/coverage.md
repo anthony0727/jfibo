@@ -57,7 +57,7 @@ illustrative.
 | `S100W4HN` | SoftBank Group Corp. | FY2024 | materialized |
 | `S100VYOD` | Honda Motor Co., Ltd. (本田技研工業) | FY2024 (年度末 2025-03-31) | materialized (v1.1.1; v0.5 had wrong EDINET code E02165, correct is E02166) |
 
-### Claim families instantiated from those 4 filings
+### Claim families instantiated from those 5 filings
 
 | Claim family | Count |
 |---:|:---|
@@ -88,7 +88,7 @@ illustrative.
    the document-type concept itself is modeled. v1.1 should align the
    element-level fields once a filing of this type is in the corpus.
 4. **No corpus from regional banks, life insurers, J-REITs, or trading-house
-   subsidiaries.** Sector diversification is v1.1 work. The current four
+   subsidiaries.** Sector diversification is future work. The current five
    filings over-index on TSE Prime large-caps.
 5. **EDINET alignment elements lack `dcterms:source` to the specific
    taxonomy version URL.** They reference the taxonomy generically;
@@ -100,7 +100,7 @@ illustrative.
 uv run python scripts/count_coverage.py
 ```
 
-This script (added in v1.0) walks `data/edinet/`, `data/derived/`, and
-`ontology/`, and prints the table above against the current repo state. It
-is invoked by CI so the README/coverage doc can never drift from reality
-silently.
+This script walks the committed claim TTL and derived alignment files. When
+gitignored raw filing ZIPs and the taxonomy workbook are present locally, it
+also reports their counts. CI reports committed claim counts; it cannot verify
+the presence of optional raw source downloads.

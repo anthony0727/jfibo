@@ -91,7 +91,7 @@ shapes/           SHACL shapes — conformance layer
 registry/         YAML source of truth for terms / entities / contributors / sources
 examples/         Validation fixtures (valid + invalid)
 scripts/          Builders, EDINET extractors, materializers
-benchmark/        Production benchmark — semantic and EDINET-claim coverage
+benchmark/        Declared schema coverage + materialized field-presence audits
 tests/            Pytest suite (47 tests)
 docs/             Governance, coverage, release, source, design policies
 research/         Non-production research material (AI-eval cases, etc.)

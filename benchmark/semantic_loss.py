@@ -1,7 +1,9 @@
-"""Semantic-loss benchmark.
+"""Author-declared semantic coverage audit.
 
-Given a controlled set of benchmark cases describing real Japanese finance
-disclosures, compute coverage metrics for vanilla FIBO vs. J-FIBO mappings.
+Given a controlled set of cases describing Japanese finance disclosures,
+summarize fields that the case authors declare representable by vanilla FIBO
+and J-FIBO. This is a schema-design audit, not an independent benchmark of
+ontology correctness, extraction accuracy, or downstream model performance.
 
 Each case YAML must include:
   expected_semantic_fields:    [list of named semantic fields]
@@ -135,6 +137,12 @@ def run(cases_dir: Path = CASES_DIR, results_dir: Path = RESULTS_DIR) -> dict[st
     cases = load_cases(cases_dir)
     metrics = [compute_case(c) for c in cases]
     summary = {
+        "methodology": {
+            "kind": "author_declared_mapping_coverage",
+            "independent_ground_truth": False,
+            "valid_for": "reviewing the declared schema design in benchmark/cases",
+            "not_valid_for": "proving semantic superiority or extraction accuracy",
+        },
         "cases": [asdict(m) for m in metrics],
         "cohort": cohort_summary(metrics),
     }
@@ -155,11 +163,11 @@ def main() -> int:
     args = ap.parse_args()
     summary = run(args.cases_dir, args.results_dir)
 
-    print("J-FIBO semantic-loss benchmark")
+    print("J-FIBO declared semantic-coverage audit")
     print("=" * 48)
     print(f"cases:                            {summary['cohort']['cases']}")
-    print(f"mean vanilla FIBO coverage:       {_fmt(summary['cohort']['mean_vanilla_coverage'])}")
-    print(f"mean J-FIBO coverage:             {_fmt(summary['cohort']['mean_jfibo_coverage'])}")
+    print(f"mean declared vanilla coverage:   {_fmt(summary['cohort']['mean_vanilla_coverage'])}")
+    print(f"mean declared J-FIBO coverage:    {_fmt(summary['cohort']['mean_jfibo_coverage'])}")
     print(f"mean semantic-loss rate:          {_fmt(summary['cohort']['mean_semantic_loss_rate'])}")
     print(f"mean J-FIBO gain:                 {_fmt(summary['cohort']['mean_jfibo_gain'])}")
     print(f"share w/ evidence traceability:   {_fmt(summary['cohort']['share_with_evidence_traceability'])}")

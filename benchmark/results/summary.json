@@ -1,4 +1,10 @@
 {
+  "methodology": {
+    "kind": "author_declared_mapping_coverage",
+    "independent_ground_truth": false,
+    "valid_for": "reviewing the declared schema design in benchmark/cases",
+    "not_valid_for": "proving semantic superiority or extraction accuracy"
+  },
   "cases": [
     {
       "id": "case-001-toyota-policy-shareholding-denso",

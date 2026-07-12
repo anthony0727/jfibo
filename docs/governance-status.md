@@ -23,9 +23,11 @@ substrate so it doesn't have to be retrofitted later.
 
 ## What is real today
 
-- Real, materialized RDF from real EDINET filings (Toyota Motor Corp,
-  ITOCHU, MUFG, SoftBank Group FY2024).
-- Real benchmark numbers grounded in those filings.
+- Materialized RDF derived from five EDINET filings (Toyota Motor Corp,
+  ITOCHU, MUFG, SoftBank Group, and Honda Motor FY2024).
+- Reproducible structural field-presence numbers grounded in those committed
+  claim graphs. These are not independent extraction-accuracy or comparative
+  ontology benchmarks.
 - A real ontology with verified FIBO/Commons parents, closed vocabularies,
   and SHACL conformance.
 

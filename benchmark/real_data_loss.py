@@ -1,4 +1,4 @@
-"""Real-EDINET semantic-loss benchmark for the J-FIBO v0.5 claim families.
+"""Structural field-presence audit for materialized EDINET claims.
 
 Scores three claim families against fixed expected-field schemas:
 
@@ -16,8 +16,10 @@ Scores three claim families against fixed expected-field schemas:
                             jcn_identity_resolution, information_status,
                             evidence_locator, reporting_period_validity)
 
-Vanilla FIBO is scored as representing only the structural object fields
-(parties + counts); the institutional/role/provenance fields are J-FIBO-only.
+The "vanilla" sets below are author-defined comparison subsets. The audit does
+not execute vanilla FIBO, compare extracted values with filing ground truth, or
+measure correctness. It reports which expected predicates are present in the
+materialized J-FIBO claim graph.
 """
 from __future__ import annotations
 
@@ -222,6 +224,12 @@ def run(claims_dir: Path = CLAIMS_DIR) -> dict:
         by_kind[c["kind"]].append(c)
 
     summary = {
+        "methodology": {
+            "kind": "materialized_claim_field_presence",
+            "independent_ground_truth": False,
+            "vanilla_baseline": "author_defined_field_subset",
+            "not_valid_for": "proving extraction accuracy or ontology superiority",
+        },
         "claims": len(all_claims),
         "mean_vanilla_coverage": statistics.fmean(c["vanilla_coverage"] for c in all_claims),
         "mean_jfibo_coverage":   statistics.fmean(c["jfibo_coverage"]   for c in all_claims),
@@ -249,12 +257,12 @@ def main() -> int:
     args.out.write_text(json.dumps(summary, ensure_ascii=False, indent=2))
     if not summary or summary.get("claims", 0) == 0:
         print("no claims found"); return 0
-    print("J-FIBO real-EDINET semantic-loss benchmark (v0.5)")
+    print("J-FIBO materialized-claim field-presence audit")
     print("=" * 52)
     print(f"claims:                          {summary['claims']}")
-    print(f"mean vanilla FIBO coverage:      {summary['mean_vanilla_coverage']:.3f}")
-    print(f"mean J-FIBO coverage:            {summary['mean_jfibo_coverage']:.3f}")
-    print(f"mean J-FIBO gain:                {summary['mean_jfibo_gain']:.3f}")
+    print(f"mean declared vanilla subset:    {summary['mean_vanilla_coverage']:.3f}")
+    print(f"mean J-FIBO field presence:      {summary['mean_jfibo_coverage']:.3f}")
+    print(f"mean declared-field difference:  {summary['mean_jfibo_gain']:.3f}")
     print()
     print("by claim kind:")
     for k, v in summary["by_kind"].items():

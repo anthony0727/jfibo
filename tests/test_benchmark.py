@@ -25,12 +25,11 @@ def test_per_case_metrics_invariants() -> None:
         assert m.expected > 0, c["id"]
 
 
-def test_cohort_jfibo_beats_vanilla_on_average() -> None:
+def test_declared_coverage_summary_stays_within_declared_case_bounds() -> None:
     cases = load_cases()
     metrics = [compute_case(c) for c in cases]
     summary = cohort_summary(metrics)
-    assert summary["mean_jfibo_coverage"] > summary["mean_vanilla_coverage"] + 0.3
-    assert summary["mean_jfibo_gain"] > 0.3
+    assert summary["mean_jfibo_coverage"] >= summary["mean_vanilla_coverage"]
 
 
 def test_summary_serializes() -> None:
@@ -38,3 +37,4 @@ def test_summary_serializes() -> None:
     out = REPO / "benchmark" / "results" / "summary.json"
     assert out.exists()
     assert summary["cohort"]["cases"] >= 10
+    assert summary["methodology"]["independent_ground_truth"] is False

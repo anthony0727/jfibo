@@ -74,9 +74,11 @@ def test_real_claims_shacl_conform(materialized: list[Path]) -> None:
         assert r.returncode == 0, ttl.name + "\n" + r.stdout + r.stderr
 
 
-def test_real_benchmark_jfibo_beats_vanilla() -> None:
+def test_real_data_audit_reports_methodology_and_claims() -> None:
     from real_data_loss import run as run_real  # noqa
     summary = run_real()
     if summary.get("claims", 0) == 0:
         pytest.skip("no materialized claims to score")
-    assert summary["mean_jfibo_coverage"] > summary["mean_vanilla_coverage"] + 0.4
+    assert summary["methodology"]["kind"] == "materialized_claim_field_presence"
+    assert summary["methodology"]["independent_ground_truth"] is False
+    assert 0.0 <= summary["mean_jfibo_coverage"] <= 1.0

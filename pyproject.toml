@@ -1,7 +1,7 @@
 [project]
 name = "jfibo"
 version = "1.1.1"
-description = "Japanese-finance extension of FIBO: ontology, SHACL shapes, EDINET alignment, and benchmark."
+description = "Japanese-finance extension of FIBO: ontology, SHACL shapes, EDINET alignment, and coverage audits."
 readme = "README.md"
 requires-python = ">=3.13"
 license = { file = "LICENSE" }

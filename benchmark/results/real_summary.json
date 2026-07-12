@@ -1,4 +1,10 @@
 {
+  "methodology": {
+    "kind": "materialized_claim_field_presence",
+    "independent_ground_truth": false,
+    "vanilla_baseline": "author_defined_field_subset",
+    "not_valid_for": "proving extraction accuracy or ontology superiority"
+  },
   "claims": 280,
   "mean_vanilla_coverage": 0.2814046072974644,
   "mean_jfibo_coverage": 0.973538961038961,

@@ -1,9 +1,11 @@
-"""Reproduce the numbers reported in docs/coverage.md from the live repo.
+"""Report coverage artifacts available in the current checkout.
 
 Run from repo root:
     uv run python scripts/count_coverage.py
 
-Exits non-zero if any expected artifact is missing (so CI catches drift).
+Materialized TTL claims are committed and always counted. Raw filing ZIPs and
+the source taxonomy workbook are optional, gitignored inputs; their absence is
+reported but does not fail the command.
 """
 from __future__ import annotations
 
