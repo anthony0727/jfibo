@@ -4,8 +4,8 @@ import subprocess
 from pathlib import Path
 
 import pytest
-from rdflib import Graph, Namespace
-from rdflib.namespace import RDF
+from rdflib import Graph, Literal, Namespace, URIRef
+from rdflib.namespace import DCTERMS, OWL, RDF, XSD
 
 REPO = Path(__file__).resolve().parents[1]
 CLAIMS_DIR = REPO / "data" / "edinet" / "claims"
@@ -59,6 +59,13 @@ def test_triangulated_cross_shareholdings_carry_dual_evidence(materialized: list
             found_any = True
             derived = list(g.objects(claim, __import__("rdflib").namespace.PROV.wasDerivedFrom))
             assert len(derived) >= 2, claim
+            for predicate in (JPFIBO.hasInvestor, JPFIBO.hasIssuer):
+                entity = g.value(claim, predicate)
+                assert entity is not None, claim
+                assert any(
+                    "/entity/jcn/" in str(candidate)
+                    for candidate in g.objects(entity, OWL.sameAs)
+                ), (claim, entity)
     if not found_any:
         pytest.skip("no triangulated cross-shareholdings present")
 
@@ -82,3 +89,54 @@ def test_real_data_audit_reports_methodology_and_claims() -> None:
     assert summary["methodology"]["kind"] == "materialized_claim_field_presence"
     assert summary["methodology"]["independent_ground_truth"] is False
     assert 0.0 <= summary["mean_jfibo_coverage"] <= 1.0
+    for kind, stats in summary["by_kind"].items():
+        assert 0 <= stats["complete_claims"] <= stats["claims"], kind
+        for field_stats in stats["field_presence"].values():
+            assert field_stats["present"] + field_stats["missing"] == stats["claims"]
+
+
+def test_cross_audit_requires_real_jcn_identity_links() -> None:
+    from real_data_loss import cross_metrics  # noqa
+
+    g = Graph()
+    claim = URIRef("urn:test:cross")
+    investor = URIRef("https://w3id.org/jfibo/entity/edinet/E00001")
+    issuer = URIRef("https://w3id.org/jfibo/entity/edinet/E00002")
+    g.add((claim, RDF.type, JPFIBO.CrossShareholdingClaim))
+    g.add((claim, JPFIBO.hasInvestor, investor))
+    g.add((claim, JPFIBO.hasIssuer, issuer))
+
+    assert "jcn_identity_resolution" not in cross_metrics(g)[0]["fields"]
+
+    g.add((investor, OWL.sameAs, URIRef("https://w3id.org/jfibo/entity/jcn/1000000000001")))
+    g.add((issuer, OWL.sameAs, URIRef("https://w3id.org/jfibo/entity/jcn/1000000000002")))
+    assert "jcn_identity_resolution" in cross_metrics(g)[0]["fields"]
+
+
+def test_cross_triangulation_requires_and_preserves_a_shared_period() -> None:
+    from materialize_claims import triangulate_cross_shareholdings  # noqa
+
+    investor = URIRef("https://w3id.org/jfibo/entity/edinet/E00001")
+    issuer = URIRef("https://w3id.org/jfibo/entity/edinet/E00002")
+    investor_jcn = URIRef("https://w3id.org/jfibo/entity/jcn/1000000000001")
+    issuer_jcn = URIRef("https://w3id.org/jfibo/entity/jcn/1000000000002")
+    issuers = {investor: {issuer_jcn}}
+    holders = {issuer: {investor_jcn}}
+    documents = {
+        investor: URIRef("https://example.test/filing-a"),
+        issuer: URIRef("https://example.test/filing-b"),
+    }
+    identities = {investor: investor_jcn, issuer: issuer_jcn}
+    periods = {investor: "2025-03-31", issuer: "2025-03-31"}
+
+    graph = triangulate_cross_shareholdings(
+        issuers, holders, documents, identities, periods, "2026-07-12T00:00:00+00:00"
+    )
+    claim = next(graph.subjects(RDF.type, JPFIBO.CrossShareholdingClaim))
+    assert graph.value(claim, DCTERMS.valid) == Literal("2025-03-31", datatype=XSD.date)
+
+    periods[issuer] = "2024-03-31"
+    mismatched = triangulate_cross_shareholdings(
+        issuers, holders, documents, identities, periods, "2026-07-12T00:00:00+00:00"
+    )
+    assert not list(mismatched.subjects(RDF.type, JPFIBO.CrossShareholdingClaim))

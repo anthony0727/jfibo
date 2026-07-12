@@ -297,16 +297,21 @@ def triangulate_cross_shareholdings(
     holder_iris_by_filer: dict[URIRef, set[URIRef]],
     filer_to_doc: dict[URIRef, URIRef],
     filer_jcn_iri: dict[URIRef, URIRef],
+    filer_to_period: dict[URIRef, str],
     generated_at: str,
 ) -> Graph:
     """Detect filer pairs (A, B) where A's policy-shareholdings include B's
-    filer entity and B's major-shareholders include A's filer entity."""
+    filer entity and B's major-shareholders include A's filer entity for the
+    same reporting period."""
     g = Graph()
     bind_prefixes(g)
     pairs_seen: set[tuple[str, str]] = set()
     for filer_a, a_issuers in issuer_iris_by_filer.items():
         for filer_b, b_holders in holder_iris_by_filer.items():
             if filer_a == filer_b:
+                continue
+            reporting_period = filer_to_period.get(filer_a)
+            if not reporting_period or reporting_period != filer_to_period.get(filer_b):
                 continue
             jcn_a = filer_jcn_iri.get(URIRef(filer_a), URIRef(filer_a))
             jcn_b = filer_jcn_iri.get(URIRef(filer_b), URIRef(filer_b))
@@ -326,13 +331,17 @@ def triangulate_cross_shareholdings(
             g.add((claim, RDF.type, JPFIBO.CrossShareholdingClaim))
             g.add((claim, JPFIBO.hasInvestor, URIRef(filer_a)))
             g.add((claim, JPFIBO.hasIssuer, URIRef(filer_b)))
+            if filer_a in filer_jcn_iri:
+                g.add((URIRef(filer_a), OWL.sameAs, filer_jcn_iri[filer_a]))
+            if filer_b in filer_jcn_iri:
+                g.add((URIRef(filer_b), OWL.sameAs, filer_jcn_iri[filer_b]))
             g.add((claim, PROV.wasDerivedFrom, filer_to_doc[URIRef(filer_a)]))
             g.add((claim, PROV.wasDerivedFrom, filer_to_doc[URIRef(filer_b)]))
             g.add((claim, JPFIBO.informationStatus, JPFIBO.EvidenceBackedInferred))
             g.add((claim, JPFIBO.normativeStatus, JPFIBO.InferredHypothesis))
             g.add((claim, SKOS.note, Literal(f"triangulation: {triangulation_kind}", lang="en")))
             g.add((claim, PROV.generatedAtTime, Literal(generated_at, datatype=XSD.dateTime)))
-            g.add((claim, DCTERMS.valid, Literal(dt.date.today().isoformat(), datatype=XSD.date)))
+            g.add((claim, DCTERMS.valid, Literal(reporting_period, datatype=XSD.date)))
     return g
 
 
@@ -347,6 +356,7 @@ def main() -> int:
     all_holders: dict[URIRef, set[URIRef]] = defaultdict(set)
     filer_to_doc: dict[URIRef, URIRef] = {}
     filer_jcn_iri: dict[URIRef, URIRef] = {}
+    filer_to_period: dict[URIRef, str] = {}
     for doc_id in docs:
         p = EXTRACTED_DIR / f"{doc_id}.json"
         if not p.exists():
@@ -373,6 +383,7 @@ def main() -> int:
         for k, v in hol.items(): all_holders[URIRef(k)].update(v)
         filer_iri_v = URIRef(EDINET_FILER_BASE + extracted["dei"]["edinet_code"]["value"])
         filer_to_doc[filer_iri_v] = URIRef(EDINET_FILING_BASE + doc_id)
+        filer_to_period[filer_iri_v] = extracted["dei"]["fy_end"]["value"]
         from entity_resolver import resolve as _resolve
         jcn_iri, src = _resolve(extracted["dei"]["filer_name_ja"]["value"])
         if src == "jcn":
@@ -386,7 +397,7 @@ def main() -> int:
 
     # Triangulate cross-shareholding claims from the loaded corpus.
     cs = triangulate_cross_shareholdings(
-        all_issuers, all_holders, filer_to_doc, filer_jcn_iri,
+        all_issuers, all_holders, filer_to_doc, filer_jcn_iri, filer_to_period,
         dt.datetime.now(dt.UTC).isoformat(),
     )
     cs_out = CLAIMS_DIR / "_cross_shareholding.ttl"

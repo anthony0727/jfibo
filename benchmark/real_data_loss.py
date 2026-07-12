@@ -31,7 +31,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from rdflib import Graph, Namespace, URIRef
-from rdflib.namespace import DCTERMS, PROV, RDF, SKOS, XSD
+from rdflib.namespace import DCTERMS, OWL, PROV, RDF, SKOS, XSD
 
 REPO = Path(__file__).resolve().parents[1]
 CLAIMS_DIR = REPO / "data" / "edinet" / "claims"
@@ -76,9 +76,30 @@ COMMERCIAL_PAPER_EXPECTED = [
 ]
 COMMERCIAL_PAPER_VANILLA = {"borrower"}
 
+EXPECTED_BY_KIND = {
+    "PolicyShareholding": POLICY_EXPECTED,
+    "MajorShareholderClaim": MAJOR_EXPECTED,
+    "CrossShareholdingClaim": CROSS_EXPECTED,
+    "BorrowingsClaim": BORROWINGS_EXPECTED,
+    "CommercialPaperClaim": COMMERCIAL_PAPER_EXPECTED,
+}
+
 
 def _ratio(a: int, b: int) -> float:
     return float(a) / float(b) if b else 0.0
+
+
+def _has_jcn_identity(g: Graph, entity: URIRef | None) -> bool:
+    if not isinstance(entity, URIRef):
+        return False
+    if "/entity/jcn/" in str(entity):
+        return True
+    equivalents = set(g.objects(entity, OWL.sameAs))
+    equivalents.update(g.subjects(OWL.sameAs, entity))
+    return any(
+        isinstance(candidate, URIRef) and "/entity/jcn/" in str(candidate)
+        for candidate in equivalents
+    )
 
 
 def policy_metrics(g: Graph) -> list[dict]:
@@ -135,11 +156,13 @@ def cross_metrics(g: Graph) -> list[dict]:
     out: list[dict] = []
     for c in g.subjects(RDF.type, JPFIBO.CrossShareholdingClaim):
         f: set[str] = set()
-        if g.value(c, JPFIBO.hasInvestor): f.add("investor")
-        if g.value(c, JPFIBO.hasIssuer): f.add("issuer")
+        investor = g.value(c, JPFIBO.hasInvestor)
+        issuer = g.value(c, JPFIBO.hasIssuer)
+        if investor: f.add("investor")
+        if issuer: f.add("issuer")
         derived = list(g.objects(c, PROV.wasDerivedFrom))
         if len(derived) >= 2: f.add("dual_evidence_traceability")
-        if g.value(c, JPFIBO.hasInvestor) and g.value(c, JPFIBO.hasIssuer):
+        if _has_jcn_identity(g, investor) and _has_jcn_identity(g, issuer):
             f.add("jcn_identity_resolution")
         if g.value(c, JPFIBO.informationStatus): f.add("information_status")
         if g.value(c, PROV.wasDerivedFrom): f.add("evidence_locator")
@@ -234,16 +257,38 @@ def run(claims_dir: Path = CLAIMS_DIR) -> dict:
         "mean_vanilla_coverage": statistics.fmean(c["vanilla_coverage"] for c in all_claims),
         "mean_jfibo_coverage":   statistics.fmean(c["jfibo_coverage"]   for c in all_claims),
         "mean_jfibo_gain":       statistics.fmean(c["jfibo_coverage"] - c["vanilla_coverage"] for c in all_claims),
-        "by_kind": {
-            k: {
-                "claims": len(ms),
-                "mean_vanilla_coverage": statistics.fmean(m["vanilla_coverage"] for m in ms),
-                "mean_jfibo_coverage":   statistics.fmean(m["jfibo_coverage"]   for m in ms),
-                "mean_jfibo_gain":       statistics.fmean(m["jfibo_coverage"] - m["vanilla_coverage"] for m in ms),
-            }
-            for k, ms in sorted(by_kind.items())
-        },
+        "by_kind": {},
     }
+    for kind, claims in sorted(by_kind.items()):
+        expected = EXPECTED_BY_KIND[kind]
+        field_presence = {
+            field: {
+                "present": sum(field in claim["fields"] for claim in claims),
+                "missing": sum(field not in claim["fields"] for claim in claims),
+                "rate": _ratio(
+                    sum(field in claim["fields"] for claim in claims),
+                    len(claims),
+                ),
+            }
+            for field in expected
+        }
+        summary["by_kind"][kind] = {
+            "claims": len(claims),
+            "complete_claims": sum(
+                len(claim["fields"]) == len(expected) for claim in claims
+            ),
+            "mean_vanilla_coverage": statistics.fmean(
+                claim["vanilla_coverage"] for claim in claims
+            ),
+            "mean_jfibo_coverage": statistics.fmean(
+                claim["jfibo_coverage"] for claim in claims
+            ),
+            "mean_jfibo_gain": statistics.fmean(
+                claim["jfibo_coverage"] - claim["vanilla_coverage"]
+                for claim in claims
+            ),
+            "field_presence": field_presence,
+        }
     return summary
 
 
@@ -268,10 +313,18 @@ def main() -> int:
     for k, v in summary["by_kind"].items():
         print(
             f"  {k:24s} claims={v['claims']:>3}  "
+            f"complete={v['complete_claims']:>3}  "
             f"vanilla={v['mean_vanilla_coverage']:.3f}  "
             f"jfibo={v['mean_jfibo_coverage']:.3f}  "
             f"gain={v['mean_jfibo_gain']:.3f}"
         )
+        missing = [
+            f"{field}:{stats['missing']}"
+            for field, stats in v["field_presence"].items()
+            if stats["missing"]
+        ]
+        if missing:
+            print(f"    missing fields: {', '.join(missing)}")
     return 0
 
 

@@ -1,11 +1,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix jfibo: <https://w3id.org/jfibo/ontology/JP/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:jfibo:claim:cross-shareholding/E02144-E03606> a jfibo:CrossShareholdingClaim ;
-    dcterms:valid "2026-06-01"^^xsd:date ;
+    dcterms:valid "2025-03-31"^^xsd:date ;
     skos:note "triangulation: policy_x_policy"@en ;
     prov:generatedAtTime "2026-05-31T23:57:18.443905+00:00"^^xsd:dateTime ;
     prov:wasDerivedFrom <https://disclosure2.edinet-fsa.go.jp/WEEK0030.aspx?docID=S100VWVY>,
@@ -15,3 +16,6 @@
     jfibo:informationStatus jfibo:EvidenceBackedInferred ;
     jfibo:normativeStatus jfibo:InferredHypothesis .
 
+<https://w3id.org/jfibo/entity/edinet/E02144> owl:sameAs <https://w3id.org/jfibo/entity/jcn/1180301018771> .
+
+<https://w3id.org/jfibo/entity/edinet/E03606> owl:sameAs <https://w3id.org/jfibo/entity/jcn/1010001008846> .

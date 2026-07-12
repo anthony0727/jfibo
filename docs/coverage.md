@@ -69,6 +69,28 @@ illustrative.
 | `MainBankCandidate` | 1 (Mizuho Bank → ITOCHU, v1.1 materializer) |
 | **Total** | **281** |
 
+### Structural field-presence findings
+
+`uv run python benchmark/real_data_loss.py` audits the 280 claim instances
+covered by its five declared schemas (`MainBankCandidate` is not yet included).
+Of those, 229 have every declared field present. The actionable gaps are:
+
+- `PolicyShareholding`: 176/223 complete; 45 lack `holding_purpose`, 11 lack
+  `share_count`, 11 lack `carrying_amount`, and 9 lack the reciprocal-holding
+  marker.
+- `BorrowingsClaim`: 1/5 complete; 3 lack `average_rate` and 3 lack
+  `repayment_deadline`.
+- `MajorShareholderClaim`, `CommercialPaperClaim`, and
+  `CrossShareholdingClaim`: complete against their declared schemas in this
+  corpus. For the cross-shareholding claim, JCN identity resolution now means
+  that both EDINET endpoints have explicit `owl:sameAs` links to JCN entities;
+  endpoint presence alone does not count. Cross-holding triangulation also
+  requires a shared reporting period and records that period rather than the
+  materialization date.
+
+This is a field-presence result, not evidence that extracted values are
+correct or that the corpus represents Japanese filings generally.
+
 ## Known gaps and open work
 
 1. ~~Honda Motor (E02165) FY2024 securities report not yet in the corpus.~~
